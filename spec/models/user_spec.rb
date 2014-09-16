@@ -65,18 +65,25 @@ describe "User" do
 		it { should_not be_valid }
 	end
 
+	describe "when password is too short" do 
+		before { @user.update(password: "123", password_confirmation: "123") }
+		it { should be_invalid }
+	end
+
 	describe "return value of authenticate method" do 
 		before do 
 			@user.save
-			let(:found_user) { User.find_by(email: @user.email) }
 		end
+		let(:found_user) { User.find_by(email: @user.email) }
 
 		describe "when password is valid" do 
-			it { should_be found_user.authenticate(@user.password) }
-			# expect(:found_user.authenticate("password")).to_eq :found_User
+			it { should eq found_user.authenticate(@user.password) }
 		end
 
 		describe "when password is invalid" do 
+			let(:wrong_attempt) { found_user.authenticate("wrong password") } # just defining wrong_attempt = found_user doesn't work. In that case, found user is not found.
+			it { should_not eq wrong_attempt }
+			specify { expect(wrong_attempt).to eq false }
 		end
  	end
 
