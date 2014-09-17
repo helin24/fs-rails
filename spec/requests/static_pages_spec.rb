@@ -17,9 +17,9 @@ describe "StaticPages" do
 			expect(page).to have_content('Home Page')
 		end
 
-		it "should have title 'EdgeTracing'" do 
+		it "should have title 'EdgeTracer'" do 
 			visit '/'
-			expect(page).to have_title('EdgeTracing')
+			expect(page).to have_title('EdgeTracer')
 		end
 	end
 
