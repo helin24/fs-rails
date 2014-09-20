@@ -1,0 +1,10 @@
+<%= flash[:error] %>
+<%= form_for @user do |f| %>
+	<%= f.text_field :name, placeholder: "Name" %>
+	<%= f.email_field :email, placeholder: "Email" %>
+	<%= f.text_area :about, placeholder: "About" %>
+	<%= f.date_field :birthday, placeholder: "Birthday" %>
+	<%= f.password_field :password, placeholder: "Password" %>
+	<%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %>
+	<%= f.submit "Create Account" %>
+<% end %>	
