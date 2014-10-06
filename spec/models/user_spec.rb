@@ -87,4 +87,9 @@ describe "User" do
 		end
  	end
 
+ 	describe "remember token" do 
+ 		before { @user.save }
+ 		it { expect(@user.remember_token).not_to be_blank }
+ 	end
+
 end
