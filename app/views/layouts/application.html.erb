@@ -8,7 +8,9 @@
 </head>
 <body>
 	<div id="header">
-		<%= link_to "Log Out", signout_path, method: "delete" %>
+		<% if current_user %>
+			<%= link_to "Log Out", signout_path, method: "delete" %>
+		<% end %>
 	</div>
 
 	<div class="container">
