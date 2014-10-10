@@ -1,0 +1,9 @@
+<%= flash[:error] %>
+<%= form_for @user do |f| %>
+	<%= f.text_field :name, value: @user.name, placeholder: "Name" %>
+	<%= f.email_field :email, value: @user.email, placeholder: "Email" %>
+	<%= f.text_area :about, value: @user.about, placeholder: "About" %>
+	<%= f.date_field :birthday, value: @user.birthday, placeholder: "Birthday" %>
+	<%= f.date_field :started_skating, value: @user.started_skating, placeholder: "Started Skating" %>
+	<%= f.submit "Edit" %>
+<% end %>	
