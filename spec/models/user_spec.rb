@@ -11,8 +11,11 @@ describe "User" do
 	it { should respond_to(:email) }
 	it { should respond_to(:about) }
 	it { should respond_to(:birthday) }
+	it { should respond_to(:started_skating) }
 	it { should respond_to(:password_digest) }
 	it { should respond_to(:authenticate) }
+	it { should respond_to(:remember_token) }
+	it { should respond_to(:skills) }
 
 	describe "when email is not present" do 
 		before { @user.email = " " }

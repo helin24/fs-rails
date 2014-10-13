@@ -1,4 +1,4 @@
-# FS Momentum
+# EdgeTracer
 
 ## Purpose
 
