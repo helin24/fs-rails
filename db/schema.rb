@@ -33,10 +33,10 @@ ActiveRecord::Schema.define(version: 20141013203916) do
     t.string   "password_digest"
     t.string   "about"
     t.date     "birthday"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.date     "started_skating"
     t.string   "remember_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
