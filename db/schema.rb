@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20141013203916) do
   create_table "users_skills", force: true do |t|
     t.integer  "user_id"
     t.integer  "skill_id"
+    t.integer  "progress",   default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

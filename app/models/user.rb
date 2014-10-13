@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 	has_secure_password
 
 	before_save { self.email = email.downcase }
+	before_save :add_skills
 
 	def self.new_remember_token
 		SecureRandom.urlsafe_base64
@@ -17,6 +18,10 @@ class User < ActiveRecord::Base
 
 	def self.digest(token)
 		Digest::SHA1.hexdigest(token.to_s)
+	end
+
+	def add_skills
+		self.skills << Skill.all
 	end
 	
 	private

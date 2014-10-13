@@ -24,7 +24,6 @@ Level.create(name: 'Freestyle 10', organization: 'ISI')
 # Individual skills
 CSV.foreach('lib/assets/skills.csv', headers: true) do |row|
 	skill = Skill.create(name: row['skill'])
-  puts row.inspect
   puts row['skill']
   puts row['level']
 	skill.level = Level.find_by(name: row['level'])
