@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- SQL XML created by WWW SQL Designer, http://code.google.com/p/wwwsqldesigner/ -->
-<!-- Active URL: https://socrates.devbootcamp.com/sql -->
+<!-- Active URL: https://socrates.devbootcamp.com/sql.html -->
 <sql>
 <datatypes db="mysql">
   <group label="Numeric" color="rgb(238,238,170)">
@@ -32,7 +32,7 @@
     <type label="SET" length="1" sql="SET" quote=""/>
     <type label="Bit" length="0" sql="bit" quote=""/>
   </group>
-</datatypes><table x="177" y="138" name="skills_levels">
+</datatypes><table x="160" y="123" name="levels">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -42,14 +42,11 @@
 <row name="organization" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="achieved_on" null="1" autoincrement="0">
-<datatype>DATE</datatype>
-<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="362" y="135" name="skills">
+<table x="295" y="232" name="skills">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -58,7 +55,7 @@
 <default>NULL</default></row>
 <row name="level_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="skills_levels" row="id" />
+<default>NULL</default><relation table="levels" row="id" />
 </row>
 <key type="PRIMARY" name="">
 <part>id</part>
@@ -105,7 +102,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="609" y="4" name="notes">
+<table x="525" y="328" name="notes">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -145,7 +142,7 @@
 </key>
 <comment>mostly links that can be tagged with relevance to many skills, levels, etc.</comment>
 </table>
-<table x="469" y="433" name="skills_field_moves">
+<table x="471" y="524" name="skills_field_moves">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -196,6 +193,9 @@
 <row name="birthday" null="1" autoincrement="0">
 <datatype>DATE</datatype>
 <default>NULL</default></row>
+<row name="started_skating" null="1" autoincrement="0">
+<datatype>DATE</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
@@ -208,7 +208,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="592" y="219" name="users_skills">
+<table x="506" y="183" name="users_skills">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -220,14 +220,34 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="users" row="id" />
 </row>
-<row name="doable_on" null="1" autoincrement="0">
-<datatype>DATE</datatype>
+<row name="users_level_Id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="users_levels" row="id" />
+</row>
+<row name="progress" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="reliable_on" null="1" autoincrement="0">
-<datatype>DATE</datatype>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="481" y="32" name="users_levels">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="refined_on" null="1" autoincrement="0">
-<datatype>DATE</datatype>
+<row name="level_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="levels" row="id" />
+</row>
+<row name="user_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="users" row="id" />
+</row>
+<row name="learned_points" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="total_points" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
