@@ -5,3 +5,10 @@
 <% if @user == current_user %>
 	<%= link_to "Edit", edit_user_path %>
 <% end %>
+<div id="progress">
+	<h2>Progress on Levels</h2>	
+	<% @levels.each do |level| %>
+	<li><%= level.name %></li>
+	<% end %>
+</div>
+<%  %>
