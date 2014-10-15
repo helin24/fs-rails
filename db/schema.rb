@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141013203916) do
+ActiveRecord::Schema.define(version: 20141015025411) do
 
   create_table "levels", force: true do |t|
     t.string   "name"
@@ -42,15 +42,29 @@ ActiveRecord::Schema.define(version: 20141013203916) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
+  create_table "users_levels", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "level_id"
+    t.integer  "learned_points"
+    t.integer  "total_points"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users_levels", ["level_id"], name: "index_users_levels_on_level_id"
+  add_index "users_levels", ["user_id"], name: "index_users_levels_on_user_id"
+
   create_table "users_skills", force: true do |t|
     t.integer  "user_id"
     t.integer  "skill_id"
-    t.integer  "progress",   default: 0
+    t.integer  "users_level_id"
+    t.integer  "progress",       default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "users_skills", ["skill_id"], name: "index_users_skills_on_skill_id"
   add_index "users_skills", ["user_id"], name: "index_users_skills_on_user_id"
+  add_index "users_skills", ["users_level_id"], name: "index_users_skills_on_users_level_id"
 
 end
