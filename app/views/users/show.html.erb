@@ -7,8 +7,11 @@
 <% end %>
 <div id="progress">
 	<h2>Progress on Levels</h2>	
-	<% @levels.each do |level| %>
-	<li><%= level.name %></li>
+	<% @users_levels.each do |users_level| %>
+	<li><div class="user-level-name"><%= users_level.level.name %></div>
+		<div class="user-level-progress">
+			<progress class="user-level-bar" value="<%= users_level.learned_points %>" max="<%= users_level.total_points %>"></progress>
+			<%= users_level.learned_points %> / <%= users_level.total_points %></div></li>
 	<% end %>
 </div>
 <%  %>

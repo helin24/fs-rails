@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 	def show
 		puts params
 		@user = User.find(params[:id])
-		@levels = Level.all
+		@users_levels = @user.users_levels
 	end
 
 	def edit

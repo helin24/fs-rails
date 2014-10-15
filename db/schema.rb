@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(version: 20141015025411) do
   create_table "users_levels", force: true do |t|
     t.integer  "user_id"
     t.integer  "level_id"
-    t.integer  "learned_points"
-    t.integer  "total_points"
+    t.integer  "learned_points", default: 0
+    t.integer  "total_points",   default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
