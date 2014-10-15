@@ -7,7 +7,7 @@
 <ul>
 <% @users_level.users_skills.each do |users_skill| %>
 	<li>
-		<%= users_skill.skill.name %>
+		<%= link_to "#{users_skill.skill.name}", users_skill_path(users_skill.skill) %>
 		<input type="range" name="users_skill_progress[<%= users_skill.id %>" id="users-skill-progress" value="<%= users_skill.progress %>" min="0" max="<%= UsersSkill.max_progress %>" list="progress-marks">
 	</li>
 <% end %>
