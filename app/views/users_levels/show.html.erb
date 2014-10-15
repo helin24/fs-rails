@@ -1,0 +1,14 @@
+<datalist id="progress-marks">
+	<% (UsersSkill.max_progress + 1).times do |num| %>
+	<option><%= num - 1 %></option>
+	<% end %>
+</datalist>
+
+<ul>
+<% @users_level.users_skills.each do |users_skill| %>
+	<li>
+		<%= users_skill.skill.name %>
+		<input type="range" name="users_skill_progress[<%= users_skill.id %>" id="users-skill-progress" value="<%= users_skill.progress %>" min="0" max="<%= UsersSkill.max_progress %>" list="progress-marks">
+	</li>
+<% end %>
+</ul>

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  get '/users_levels/:id' => 'users_levels#show', as: :users_level
+
   get '/signin' => 'sessions#new', as: :signin
   post '/signin' => 'sessions#create', as: :sessions
   delete '/signout' => 'sessions#destroy', as: :signout
