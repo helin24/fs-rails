@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
 
 	has_many :users_skills
 	has_many :skills, through: :users_skills
+	has_many :users_levels
+	has_many :levels, through: :users_levels
 
 	before_create :create_remember_token
 	has_secure_password

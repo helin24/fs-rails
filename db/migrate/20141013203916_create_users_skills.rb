@@ -3,6 +3,7 @@ class CreateUsersSkills < ActiveRecord::Migration
     create_table :users_skills do |t|
       t.references :user, index: true
       t.references :skill, index: true
+      t.references :users_level, index: true
       t.integer :progress, default: 0
 
       t.timestamps
