@@ -1,0 +1,8 @@
+$(document).ready(function() {
+	debugger;
+	$("#user-notes-list").on("click", ".edit-note", function() {
+		event.preventDefault();
+		$li = $(this).parent();
+		$li.html("<%= j (render 'notes/edit') %>");
+	});
+});

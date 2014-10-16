@@ -1,7 +1,4 @@
 <%= form_for @users_level, method: "put" do |f| %>
-<!-- # <form method="post" action="<%= @users_level.id %>"> -->
-<!-- 	<input type="hidden" name="_method" value="put">
- -->
 	<datalist id="progress-marks">
 		<% (UsersSkill.max_progress + 1).times do |num| %>
 		<option><%= num - 1 %></option>
@@ -18,5 +15,4 @@
 	</ul>
 
 	<input type="submit" value="Edit">
-<!-- </form> -->
 <% end %>

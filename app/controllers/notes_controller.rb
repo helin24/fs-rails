@@ -1,7 +1,6 @@
 class NotesController < ApplicationController
 	def new
 		@note = Note.new
-		render
 	end
 
 	def create
@@ -13,12 +12,17 @@ class NotesController < ApplicationController
 	end
 
 	def edit
+		@note = Note.find(params[:id])
 	end
 
 	def update
 	end
 
-	def delete
+	def destroy
+		@note = Note.find(params[:id])
+		@note_owner = @note.notable
+		@note.destroy
+		redirect_to @note_owner
 	end
 
 	private

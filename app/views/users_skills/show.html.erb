@@ -1,10 +1,19 @@
-Notes for <%= @users_skill.skill.name %>
+<script src="/show.js.erb"></script>
+
+<div id="level-link">
+	<%= link_to "<< #{@users_skill.users_level.level.name}", users_level_path(@users_skill.users_level.level) %>
+</div>
+<h3>Notes for <%= @users_skill.skill.name %></h3>
 
 <div id="user-notes-list">
 	<h4>My Notes</h4>
 	<ul>
 		<% @users_skill.notes.each do |note| %>
-		<li><%= note.text %></li>
+		<li>
+			<%= render partial: "notes/show", locals: {note: note} %>
+			<div class="edit-note"><%= link_to "Edit", edit_note_path(note), remote: true %></div>
+			<div class="delete-note"><%= link_to "Delete", note_path(note), method: "delete" %></div>
+		</li>
 		<% end %>
 	</ul>
 </div>
@@ -13,7 +22,9 @@ Notes for <%= @users_skill.skill.name %>
 	<h4>Other Notes</h4>
 	<ul>
 		<% @public_notes.each do |note| %>
-		<li><%= note.text %></li>
+		<li>
+			<%= render partial: "notes/show", locals: {note: note} %>
+		</li>
 		<% end %>
 	</ul>
 </div>
