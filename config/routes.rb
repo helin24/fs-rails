@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # put '/users/:id' => 'users#update', as: :user_update
 
   resources :users
+  resources :notes
 
   get '/users_levels/:id' => 'users_levels#show', as: :users_level
 

@@ -1,1 +1,23 @@
 Notes for <%= @users_skill.skill.name %>
+
+<div id="user-notes-list">
+	<h4>My Notes</h4>
+	<ul>
+		<% @users_skill.notes.each do |note| %>
+		<li><%= note.text %></li>
+		<% end %>
+	</ul>
+</div>
+
+<div id="public-notes-list">
+	<h4>Other Notes</h4>
+	<ul>
+		<% @public_notes.each do |note| %>
+		<li><%= note.text %></li>
+		<% end %>
+	</ul>
+</div>
+
+<div id="add-note-container">
+	<%= render partial: "notes/new", locals: {note: @note, notable: @users_skill } %>
+</div>
