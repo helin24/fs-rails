@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :notes
 
   get '/users_levels/:id' => 'users_levels#show', as: :users_level
+  put '/users_levels/:id' => 'users_levels#update'
 
   get '/users_skills/:id' => 'users_skills#show', as: :users_skill
 
