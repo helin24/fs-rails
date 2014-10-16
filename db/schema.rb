@@ -11,11 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141015025411) do
+ActiveRecord::Schema.define(version: 20141015223849) do
 
   create_table "levels", force: true do |t|
     t.string   "name"
     t.string   "organization"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "notes", force: true do |t|
+    t.string   "text"
+    t.string   "source"
+    t.string   "public"
+    t.integer  "notable_id"
+    t.string   "notable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

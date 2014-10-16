@@ -2,6 +2,7 @@ class UsersLevel < ActiveRecord::Base
   belongs_to :user
   belongs_to :level
   has_many :users_skills
+  has_many :notes, as: :notable
 
   def compute
   	self.learned_points = self.users_skills.sum(:progress)
