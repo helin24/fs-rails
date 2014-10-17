@@ -4,8 +4,12 @@ class NotesController < ApplicationController
 	end
 
 	def create
-		Note.create(note_params)
-		redirect_to users_skill_path(UsersSkill.find(note_params[:notable_id]))
+		note = Note.create(note_params)
+		render partial: "show", layout: false, locals: {note: note }
+		# redirect_to users_skill_path(UsersSkill.find(note_params[:notable_id]))
+
+		# how to have options depending on notable
+		# right now requiring request to be from ajax
 	end
 
 	def show

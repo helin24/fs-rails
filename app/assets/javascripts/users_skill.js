@@ -9,12 +9,25 @@ $(document).ready(function() {
 		event.preventDefault();
 		var $noteLi = $(this).closest("li")
 		$.ajax({url: this.action, type: "patch", data: $(this).serialize(), success: function(response) {
-				updateNote($noteLi, response);
-				// showNoteText($noteLi);
-				// hideNoteEdit($noteLi);
+			updateNote($noteLi, response);
+			// showNoteText($noteLi);
+			// hideNoteEdit($noteLi);
 			}
 		});
 	});
+
+	$("#add-note-container").on("submit", "form", function() {
+		event.preventDefault();
+		$.ajax({url: this.action, type: "post", data: $(this).serialize(), success: function(response) {
+			addNote(response);
+			clearNoteAdd();
+			}
+		});
+	});
+
+	// ajaxify add and delete
+
+	// Add listener for clicking off somewhere else to hide edit window and prevent opening of more than one edit form
 
 	var hideNoteText = function($elem) {
 		$elem.parent().find(".note-text").css("display", "none");
@@ -57,4 +70,12 @@ $(document).ready(function() {
 		$inputSource.attr("value", info.source);
 		$inputPublic.attr("value", info.public);
 	};
+
+	var addNote = function(noteHtml) {
+		$("#user-notes-ul").append("<li>" + noteHtml + "</li>");
+	};
+
+	var clearNoteAdd = function() {
+		$("#new_note")[0].reset();
+	}
 });

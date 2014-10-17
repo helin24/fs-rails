@@ -5,13 +5,10 @@
 
 <div id="user-notes-list">
 	<h4>My Notes</h4>
-	<ul>
+	<ul id="user-notes-ul">
 		<% @users_skill.notes.each do |note| %>
 		<li>
-			<%= render partial: "notes/show", locals: {note: note} %>
-			<%= render partial: "notes/edit", locals: {note: note, notable: note.notable } %>
-			<div class="edit-note-link"><%= link_to "Edit", edit_note_path(note) %></div>
-			<div class="delete-note-link"><%= link_to "Delete", note_path(note), method: "delete" %></div>
+			<%= render partial: "notes/show", locals: {note: note } %>
 		</li>
 		<% end %>
 	</ul>
