@@ -2,4 +2,4 @@
 <div class="edit-note-link"><%= link_to "Edit", edit_note_path(note) %></div>
 
 <%= render partial: "notes/edit", locals: {note: note, notable: note.notable } %>
-<div class="delete-note-link"><%= link_to "Delete", note_path(note), method: "delete" %></div>
+<div class="delete-note-link" id="<%= note.id %>"><%= link_to "Delete", note_path(note), method: "delete" %></div>

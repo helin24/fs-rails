@@ -20,7 +20,6 @@ class NotesController < ApplicationController
 	end
 
 	def update
-		puts params
 		@note = Note.find(params[:id])
 		@note.update(note_params)
 		render json: @note
@@ -30,7 +29,10 @@ class NotesController < ApplicationController
 		@note = Note.find(params[:id])
 		@note_owner = @note.notable
 		@note.destroy
-		redirect_to @note_owner
+		respond_to do |format|
+			format.html { head :ok }
+			format.js { head :ok }
+		end
 	end
 
 	private

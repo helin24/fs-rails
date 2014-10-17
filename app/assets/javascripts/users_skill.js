@@ -25,6 +25,17 @@ $(document).ready(function() {
 		});
 	});
 
+	$("#user-notes-list").on("click", ".delete-note-link", function() {
+		event.preventDefault();
+		var $elem = $(this);
+		var url = "notes/" + $elem.attr("id")
+		$.ajax({url: url, dataType: "json", success: function(response) {
+			$elem.closest("li").remove();
+			debugger;
+			}
+		});
+	})
+
 	// ajaxify add and delete
 
 	// Add listener for clicking off somewhere else to hide edit window and prevent opening of more than one edit form
