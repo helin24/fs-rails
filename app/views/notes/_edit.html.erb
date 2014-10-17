@@ -1,9 +1,11 @@
-<%= form_for @note do |f| %>
-	<%= f.text_field :text, placeholder: "Note", value: "#{note.text}" %>
-	<%= f.text_field :source, placeholder: "Source/Link", value: "#{note.source}" %>
-	<%= f.label :public, value: "#{note.public}" %>: 
-	<%= f.check_box :public %>
-	<%= f.hidden_field :notable_type, value: "#{notable.class}" %>
-	<%= f.hidden_field :notable_id, value: "#{notable.id}" %>
-	<%= f.submit %>
-<% end %>
+<div class="note-text-edit">
+	<%= form_for note do |f| %>
+		<%= f.text_field :text, placeholder: "Note", value: "#{note.text}" %>
+		<%= f.text_field :source, placeholder: "Source/Link", value: "#{note.source}" %>
+		<%= f.label :public, value: "#{note.public}" %>: 
+		<%= f.check_box :public %>
+		<%= f.hidden_field :notable_type, value: "#{notable.class}" %>
+		<%= f.hidden_field :notable_id, value: "#{notable.id}" %>
+		<%= f.submit %>
+	<% end %>
+</div>
