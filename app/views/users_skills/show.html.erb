@@ -1,10 +1,15 @@
-Notes for <%= @users_skill.skill.name %>
+<div id="level-link">
+	<%= link_to "<< #{@users_skill.users_level.level.name}", users_level_path(@users_skill.users_level.level) %>
+</div>
+<h3>Notes for <%= @users_skill.skill.name %></h3>
 
 <div id="user-notes-list">
 	<h4>My Notes</h4>
-	<ul>
+	<ul id="user-notes-ul">
 		<% @users_skill.notes.each do |note| %>
-		<li><%= note.text %></li>
+		<li>
+			<%= render partial: "notes/show", locals: {note: note } %>
+		</li>
 		<% end %>
 	</ul>
 </div>
@@ -13,7 +18,9 @@ Notes for <%= @users_skill.skill.name %>
 	<h4>Other Notes</h4>
 	<ul>
 		<% @public_notes.each do |note| %>
-		<li><%= note.text %></li>
+		<li>
+			<%= render partial: "notes/show", locals: {note: note} %>
+		</li>
 		<% end %>
 	</ul>
 </div>

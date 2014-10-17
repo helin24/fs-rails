@@ -1,24 +1,38 @@
 class NotesController < ApplicationController
 	def new
 		@note = Note.new
-		render
 	end
 
 	def create
-		Note.create(note_params)
-		redirect_to users_skill_path(UsersSkill.find(note_params[:notable_id]))
+		note = Note.create(note_params)
+		render partial: "show", layout: false, locals: {note: note }
+		# redirect_to users_skill_path(UsersSkill.find(note_params[:notable_id]))
+
+		# how to have options depending on notable
+		# right now requiring request to be from ajax
 	end
 
 	def show
 	end
 
 	def edit
+		@note = Note.find(params[:id])
 	end
 
 	def update
+		@note = Note.find(params[:id])
+		@note.update(note_params)
+		render json: @note
 	end
 
-	def delete
+	def destroy
+		@note = Note.find(params[:id])
+		@note_owner = @note.notable
+		@note.destroy
+		respond_to do |format|
+			format.html { head :ok }
+			format.js { head :ok }
+		end
 	end
 
 	private
