@@ -1,7 +1,19 @@
 $(document).ready(function() {
 	$("#user-notes-list").on("click", ".edit-note-link", function() {
+		event.preventDefault();
 		hideNoteText($(this));
 		showNoteEdit($(this));
+	});
+
+	$("#user-notes-list").on("submit", ".edit_note", function() {
+		event.preventDefault();
+		var $note = $(this)
+		$.ajax({url: this.action, type: "patch", data: $(this).serialize(), success: function(response) {
+				updateNote(response, $note);
+				showNoteText();
+				hideNoteEdit();
+			}
+		});
 	});
 
 	var hideNoteText = function($elem) {
@@ -20,5 +32,12 @@ $(document).ready(function() {
 
 	var showNoteEdit = function($elem) {
 		$elem.parent().find(".note-text-edit").css("display", "inline");
-	}
+	};
+
+	var updateNote = function(info, $note) {
+		// Update note text
+		// Update note edit
+		$note.closest("li")		
+		debugger;
+	};
 });

@@ -13,14 +13,13 @@ class NotesController < ApplicationController
 
 	def edit
 		@note = Note.find(params[:id])
-		respond_to do |format|
-			format.js {}
-			format.json { render json: @note }
-		end
 	end
 
 	def update
-		
+		puts params
+		@note = Note.find(params[:id])
+		@note.update(note_params)
+		render json: @note
 	end
 
 	def destroy
