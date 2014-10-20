@@ -36,8 +36,6 @@ $(document).ready(function() {
 		});
 	})
 
-	// ajaxify add and delete
-
 	// Add listener for clicking off somewhere else to hide edit window and prevent opening of more than one edit form
 
 	var hideNoteText = function($elem) {
