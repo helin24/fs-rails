@@ -8,11 +8,21 @@
 </head>
 <body>
 	<div id="header">
+		<div id="left-header"><h1 id="title">EdgeTracer</h1></div><!--
+		--><div id="right-header">
 		<% if current_user %>
-			<%= link_to "Log Out", signout_path, method: "delete" %>
-			<%= link_to "Profile", user_path(current_user) %>
+			<%= link_to user_path(current_user) do %>
+			<div id="profile-icon" class="icon">Profile</div>
+			<% end %>
+
+		 	<%= link_to signout_path, method: "delete" do %>
+			<div id="log-out-icon" class="icon">Logout</div>
+			<% end %>
 		<% end %>
+		</div>
 	</div>
+
+	<div id="background"><%= image_tag "winter.jpg" %></div>
 
 	<div class="container">
 	<%= yield %>
