@@ -25,16 +25,17 @@ $(document).ready(function() {
 		});
 	});
 
-	$("#user-notes-list").on("click", ".delete-note-link", function() {
-		event.preventDefault();
-		var $elem = $(this);
-		var url = "notes/" + $elem.attr("id")
-		$.ajax({url: url, dataType: "json", success: function(response) {
-			$elem.closest("li").remove();
-			debugger;
-			}
-		});
-	})
+	// $("#user-notes-list").on("click", ".delete-note-link", function() {
+	// 	event.preventDefault();
+	// 	var $elem = $(this);
+	// 	var action = "../notes/" + $elem.attr("id");
+	// 	debugger;
+	// 	$.ajax({url: action, type: "delete", success: function(response) {
+	// 		$elem.closest("li").remove();
+	// 		debugger;
+	// 		}
+	// 	});
+	// })
 
 	// Add listener for clicking off somewhere else to hide edit window and prevent opening of more than one edit form
 
