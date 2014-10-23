@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141020190653) do
+ActiveRecord::Schema.define(version: 20141022190505) do
 
   create_table "field_moves", force: true do |t|
     t.string   "name"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 20141020190653) do
   end
 
   add_index "field_moves", ["test_level_id"], name: "index_field_moves_on_test_level_id"
+
+  create_table "field_moves_skills", force: true do |t|
+    t.integer "skills_id"
+    t.integer "field_moves_id"
+  end
+
+  add_index "field_moves_skills", ["field_moves_id"], name: "index_field_moves_skills_on_field_moves_id"
+  add_index "field_moves_skills", ["skills_id"], name: "index_field_moves_skills_on_skills_id"
 
   create_table "levels", force: true do |t|
     t.string   "name"

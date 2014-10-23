@@ -29,3 +29,8 @@ CSV.foreach('lib/assets/skills.csv', headers: true) do |row|
 	skill.level = Level.find_by(name: row['level'])
 	skill.save
 end
+
+# Test Levels
+# Need more research on this anyway
+
+# Field Moves

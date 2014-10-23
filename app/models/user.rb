@@ -8,6 +8,11 @@ class User < ActiveRecord::Base
 	has_many :users_levels
 	has_many :levels, through: :users_levels
 
+	has_many :users_test_levels
+	has_many :test_levels, through: :users_test_levels
+	has_many :users_field_moves
+	has_many :field_moves, through: :users_field_moves
+
 	before_create :create_remember_token
 	has_secure_password
 
