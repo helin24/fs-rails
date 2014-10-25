@@ -25,10 +25,10 @@ $(document).ready(function() {
 		});
 	});
 
-	// $("#user-notes-list").on("click", ".delete-note-link", function() {
+	// $(document).on("click", ".delete-note-link a", function(event) {
 	// 	event.preventDefault();
 	// 	var $elem = $(this);
-	// 	var action = "../notes/" + $elem.attr("id");
+	// 	var action = "../notes/" + $elem.parent().attr("id");
 	// 	debugger;
 	// 	$.ajax({url: action, type: "delete", success: function(response) {
 	// 		$elem.closest("li").remove();

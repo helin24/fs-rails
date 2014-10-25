@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141015223849) do
+ActiveRecord::Schema.define(version: 20141022190505) do
+
+  create_table "field_moves", force: true do |t|
+    t.string   "name"
+    t.integer  "test_level_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "field_moves", ["test_level_id"], name: "index_field_moves_on_test_level_id"
+
+  create_table "field_moves_skills", force: true do |t|
+    t.integer "skill_id"
+    t.integer "field_move_id"
+  end
+
+  add_index "field_moves_skills", ["field_move_id"], name: "index_field_moves_skills_on_field_move_id"
+  add_index "field_moves_skills", ["skill_id"], name: "index_field_moves_skills_on_skill_id"
 
   create_table "levels", force: true do |t|
     t.string   "name"
@@ -37,6 +54,13 @@ ActiveRecord::Schema.define(version: 20141015223849) do
     t.datetime "updated_at"
   end
 
+  create_table "test_levels", force: true do |t|
+    t.string   "name"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
@@ -51,6 +75,19 @@ ActiveRecord::Schema.define(version: 20141015223849) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+
+  create_table "users_field_moves", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "field_move_id"
+    t.integer  "user_test_level_id"
+    t.integer  "progress"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users_field_moves", ["field_move_id"], name: "index_users_field_moves_on_field_move_id"
+  add_index "users_field_moves", ["user_id"], name: "index_users_field_moves_on_user_id"
+  add_index "users_field_moves", ["user_test_level_id"], name: "index_users_field_moves_on_user_test_level_id"
 
   create_table "users_levels", force: true do |t|
     t.integer  "user_id"
@@ -76,5 +113,16 @@ ActiveRecord::Schema.define(version: 20141015223849) do
   add_index "users_skills", ["skill_id"], name: "index_users_skills_on_skill_id"
   add_index "users_skills", ["user_id"], name: "index_users_skills_on_user_id"
   add_index "users_skills", ["users_level_id"], name: "index_users_skills_on_users_level_id"
+
+  create_table "users_test_levels", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "test_level_id"
+    t.date     "achieved_on"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users_test_levels", ["test_level_id"], name: "index_users_test_levels_on_test_level_id"
+  add_index "users_test_levels", ["user_id"], name: "index_users_test_levels_on_user_id"
 
 end
