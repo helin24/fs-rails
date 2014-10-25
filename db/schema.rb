@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 20141022190505) do
   add_index "field_moves", ["test_level_id"], name: "index_field_moves_on_test_level_id"
 
   create_table "field_moves_skills", force: true do |t|
-    t.integer "skills_id"
-    t.integer "field_moves_id"
+    t.integer "skill_id"
+    t.integer "field_move_id"
   end
 
-  add_index "field_moves_skills", ["field_moves_id"], name: "index_field_moves_skills_on_field_moves_id"
-  add_index "field_moves_skills", ["skills_id"], name: "index_field_moves_skills_on_skills_id"
+  add_index "field_moves_skills", ["field_move_id"], name: "index_field_moves_skills_on_field_move_id"
+  add_index "field_moves_skills", ["skill_id"], name: "index_field_moves_skills_on_skill_id"
 
   create_table "levels", force: true do |t|
     t.string   "name"
