@@ -4,6 +4,9 @@ class CreateCoachings < ActiveRecord::Migration
     	t.references :skater
     	t.references :coach
     	t.date :relationship_began
+    	t.boolean :skater_confirmed, default: false
+    	t.boolean :coach_confirmed, default: false
+
       t.timestamps
     end
   end

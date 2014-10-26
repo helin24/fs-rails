@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :notes
+  resources :coachings
 
   get '/users_levels/:id' => 'users_levels#show', as: :users_level
   put '/users_levels/:id' => 'users_levels#update'
