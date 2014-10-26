@@ -16,6 +16,8 @@ describe "User" do
 	it { should respond_to(:authenticate) }
 	it { should respond_to(:remember_token) }
 	it { should respond_to(:skills) }
+	it { should respond_to(:coaches) }
+	it { should respond_to(:skaters) }
 
 	describe "when email is not present" do 
 		before { @user.email = " " }
@@ -33,7 +35,7 @@ describe "User" do
 	end
 
 	describe "when email format is valid" do 
-		it "shoudl be valid" do 
+		it "should be valid" do 
 			valid_emails = %w(email@email.com em_aIL@email.com em.a.i.l@email.com email@e.m.ail.com)
 			valid_emails.each do |e|
 				@user.email = e
