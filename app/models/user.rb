@@ -3,6 +3,11 @@ class User < ActiveRecord::Base
 	validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: VALID_EMAIL_REGEX }	
 	validates :password, length: {minimum: 6}, if: :password
 
+	has_many :skater_coachings, foreign_key: :coach_id, class_name: "Coaching"
+	has_many :skaters, through: :skater_coachings, source: :skater
+	has_many :coach_coachings, foreign_key: :skater_id, class_name: "Coaching"
+	has_many :coaches, through: :coach_coachings, source: :coach
+
 	has_many :users_skills
 	has_many :skills, through: :users_skills
 	has_many :users_levels

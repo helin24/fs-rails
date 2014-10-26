@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141022190505) do
+ActiveRecord::Schema.define(version: 20141026144551) do
+
+  create_table "coachings", force: true do |t|
+    t.integer  "skater_id"
+    t.integer  "coach_id"
+    t.date     "relationship_began"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "field_moves", force: true do |t|
     t.string   "name"
