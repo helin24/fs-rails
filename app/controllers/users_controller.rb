@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 		puts params
 		@user = User.find(params[:id])
 		@users_levels = @user.users_levels
+		@coaching = Coaching.new
 	end
 
 	def edit
