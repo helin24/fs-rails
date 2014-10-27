@@ -4,7 +4,40 @@
 
 <% if @user == current_user %>
 	<%= link_to "Edit", edit_user_path %>
+
+	<div id="coaching">
+		<% if @user.coaches.empty? == false %>
+			<h2>Coaches</h2>
+			<% @user.coaches.each do |coach| %>
+				<%= render partial: "coachings/coach", locals: {user: @user, coaching: Coaching.find_by(skater_id: @user.id, coach_id: coach.id)} %>
+			<% end %>
+		<% end %>
+		<% if @user.skaters.empty? == false %>
+			<h2>Skaters</h2>
+			<% @user.skaters.each do |skater| %>
+				<%= render partial: "coachings/skater", locals: {user: @user, coaching: Coaching.find_by(skater_id: skater.id, coach_id: @user.id)} %>
+			<% end %>
+		<% end %>
+	</div>
+<% elsif current_user.coaches.include?(@user) %>
+	<h3>This person is your coach</h3>
+<% elsif current_user.skaters.include?(@user) %>
+	<h3>This person is your student</h3>
+<% else %>
+	<%= form_for @coaching do |f| %>
+		<%= f.hidden_field :skater_id, value: current_user.id %>
+		<%= f.hidden_field :coach_id, value: @user.id %>
+		<%= f.hidden_field :skater_confirmed, value: true %>
+		<%= f.submit "Add #{@user.name} as coach" %>
+	<% end %>
+	<%= form_for @coaching do |f| %>
+		<%= f.hidden_field :skater_id, value: @user.id %>
+		<%= f.hidden_field :coach_id, value: current_user.id %>
+		<%= f.hidden_field :coach_confirmed, value: true %>
+		<%= f.submit "Add #{@user.name} as student" %>
+	<% end %>
 <% end %>
+
 <div id="progress">
 	<h2>Progress on Levels</h2>	
 	<ul>

@@ -1,0 +1,12 @@
+<%= link_to "#{coaching.coach.name}", user_path(coaching.coach) %>
+<% if coaching.skater_confirmed %>
+	<%= form_for coaching do |f| %>
+		<%= f.hidden_field :skater_confirmed, value: false %>
+		<%= f.submit "Remove" %>
+	<% end %>
+<% else %>
+	<%= form_for coaching do |f| %>
+		<%= f.hidden_field :skater_confirmed, value: true %>
+		<%= f.submit "Approve" %>
+	<% end %>
+<% end %>

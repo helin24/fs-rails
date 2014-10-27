@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 20141026144551) do
     t.integer  "skater_id"
     t.integer  "coach_id"
     t.date     "relationship_began"
+    t.boolean  "skater_confirmed",   default: false
+    t.boolean  "coach_confirmed",    default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
