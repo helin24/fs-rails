@@ -5,5 +5,7 @@
 	<%= f.check_box :public %>
 	<%= f.hidden_field :notable_type, value: "#{notable.class}" %>
 	<%= f.hidden_field :notable_id, value: "#{notable.id}" %>
+	<%= f.hidden_field :author_id, value: "#{current_user.id}" %>
+	<%= f.hidden_field :user_id, value: "#{user.id}" %>
 	<%= f.submit %>
 <% end %>
