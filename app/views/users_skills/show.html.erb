@@ -26,5 +26,5 @@
 </div>
 
 <div id="add-note-container">
-	<%= render partial: "notes/new", locals: {note: @note, notable: @users_skill } %>
+	<%= render partial: "notes/new", locals: {note: @note, notable: @users_skill, user: @users_skill.user } %>
 </div>
