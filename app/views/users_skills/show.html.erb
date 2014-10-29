@@ -1,5 +1,8 @@
+<div id="user-link">
+	<%= link_to "<< #{@users_skill.user.name}", user_path(@users_skill.user) %>
+</div>
 <div id="level-link">
-	<%= link_to "<< #{@users_skill.users_level.level.name}", users_level_path(@users_skill.users_level.level) %>
+	<%= link_to "<< #{@users_skill.users_level.level.name}", users_level_path(@users_skill.users_level) %>
 </div>
 <h3>Notes for <%= @users_skill.skill.name %></h3>
 

@@ -9,17 +9,24 @@
 <body>
 	<div id="header">
 		<div id="left-header"><h1 id="title">EdgeTracer</h1></div><!--
-		--><div id="right-header">
-		<% if current_user %>
-			<%= link_to user_path(current_user) do %>
-			<div id="profile-icon" class="icon">Profile</div>
+	--><div id="right-header">
+		<ul id="right-header-list">
+			<% if current_user %>
+				<li>
+					<%= link_to user_path(current_user) do %>
+						<div id="user-picture">
+							<%= gravatar_for current_user %>
+						</div>
+					<% end %>
+				</li>
+		 		<li>
+			 		<%= link_to signout_path, method: "delete" do %>
+						<div id="log-out-icon" class="icon">Logout</div>
+					<% end %>
+				</li>
 			<% end %>
-
-		 	<%= link_to signout_path, method: "delete" do %>
-			<div id="log-out-icon" class="icon">Logout</div>
-			<% end %>
-		<% end %>
-		</div>
+		</ul>
+	</div>
 	</div>
 
 	<div id="background"><%= image_tag "winter.jpg" %></div>

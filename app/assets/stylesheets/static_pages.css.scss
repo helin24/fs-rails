@@ -19,6 +19,7 @@
   position: fixed;
   top: 0px;
   z-index: 99;
+  box-sizing: border-box;
 }
 
 #header a:link {
@@ -34,15 +35,11 @@
 }
 
 #left-header {
+  overflow: auto;
   box-sizing: border-box;
   width: 50%;
   text-align: left;
-}
-
-#right-header {
-  box-sizing: border-box;
-  width: 50%;
-  text-align: right;
+  height: 100%;
 }
 
 #title {
@@ -53,6 +50,38 @@
 
 .icon {
   margin: 6px;
+}
+
+#right-header {
+  overflow: auto;
+  box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+  text-align: right;
+}
+
+#right-header-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#right-header-list li {
+  display: inline;
+  vertical-align: middle;
+}
+
+#right-header-list li a {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#user-picture img {
+  height: 36px;
+  width: auto;
+  border-radius: 100%;
+  vertical-align: middle;
 }
 
 /* Icon Fonts */

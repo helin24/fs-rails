@@ -1,5 +1,7 @@
-Current user is <%= current_user.email %>
-This information is for <%= @users_level.user.email %>
+<div id="user-link">
+	<%= link_to "<< #{@users_level.user.name}", user_path(@users_level.user) %>
+</div>
+
 <%= form_for @users_level, method: "put" do |f| %>
 	<datalist id="progress-marks">
 		<% (UsersSkill.max_progress + 1).times do |num| %>
