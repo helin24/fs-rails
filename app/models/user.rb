@@ -48,6 +48,10 @@ class User < ActiveRecord::Base
 			users_level.compute
 		end
 	end
+
+	def coach_of?(skater)
+		self.skater_coachings.find_by(skater: skater, skater_confirmed: true, coach_confirmed: true)
+	end
 	
 	private
 		def create_remember_token

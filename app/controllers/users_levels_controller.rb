@@ -3,7 +3,7 @@ class UsersLevelsController < ApplicationController
 		@users_level = UsersLevel.find_by_id(params[:id])
 		user = @users_level.user
 
-		if user != current_user && !current_user.skaters.include?(user)
+		if user != current_user && !current_user.coach_of?(user)
 			@users_level = UsersLevel.find_by(level: @users_level.level, user: current_user)
 			redirect_to users_level_path(@users_level)
 		end
@@ -17,4 +17,5 @@ class UsersLevelsController < ApplicationController
 		@users_level.compute
 		redirect_to users_level_path(@users_level)
 	end
+
 end
