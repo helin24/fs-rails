@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   # put '/users/:id' => 'users#update', as: :user_update
 
   resources :users
+  get '/users/:id/progress' => 'users#progress', as: :user_progress
+
   resources :notes
   resources :coachings
 

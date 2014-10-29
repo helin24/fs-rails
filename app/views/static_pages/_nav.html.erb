@@ -1,0 +1,9 @@
+<ul id="nav-bar">
+	<% if user ||= false %>
+		<li <%= "class=selected" if active == "user" %>><%= gravatar_for @user %></li>
+	<% end %>
+	<% if users_levels ||= false %>
+		<li <%= "class=selected" if active == "users_levels" %>>User levels here</li>
+	<% end %>
+
+</ul>
