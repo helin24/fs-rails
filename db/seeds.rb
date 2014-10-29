@@ -31,6 +31,17 @@ CSV.foreach('lib/assets/skills.csv', headers: true) do |row|
 end
 
 # Test Levels
-# Need more research on this anyway
+
+# This information is taken from USFSA PDF (updated yearly)
+
+# PDF page number inputs
+
+level_summary_page = 297 # page that provides a summary of test levels and standard codes
+mitf_start_page = 299 # first page with MITF
+mitf_end_page = 364 # last page
+file = 'Rulebook20140814' # file should be saved in lib/assets
+
+
+####### NEED TO REMIGRATE TEST LEVELS AND FIELD MOVES TABLES ###
 
 # Field Moves
