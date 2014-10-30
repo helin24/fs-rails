@@ -8,11 +8,15 @@
 			<% end %>
 		</datalist>
 
-		<ul>
+		<ul id="level-skills-list">
 		<% @users_level.users_skills.each do |users_skill| %>
-			<li>
-				<%= link_to "#{users_skill.skill.name}", users_skill_path(users_skill) %>
-				<input type="range" name="users_skill_progress[<%= users_skill.id %>" id="users-skill-progress" value="<%= users_skill.progress %>" min="0" max="<%= UsersSkill.max_progress %>" list="progress-marks">
+			<li class="users-skill-progress">
+				<div class="skill-label">
+					<%= link_to "#{users_skill.skill.name}", users_skill_path(users_skill) %>
+				</div><!--
+			--><div class="skill-rating">
+					<input type="range" name="users_skill_progress[<%= users_skill.id %>" class="skill-slider" value="<%= users_skill.progress %>" min="0" max="<%= UsersSkill.max_progress %>" list="progress-marks">
+				</div>
 			</li>
 		<% end %>
 		</ul>
