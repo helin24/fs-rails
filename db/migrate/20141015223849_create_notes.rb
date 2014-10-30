@@ -3,7 +3,7 @@ class CreateNotes < ActiveRecord::Migration
     create_table :notes do |t|
       t.string :text
       t.string :source
-      t.string :public
+      t.integer :public
       t.references :notable, polymorphic: true
 
       t.timestamps
