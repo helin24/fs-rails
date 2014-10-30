@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141028213944) do
+ActiveRecord::Schema.define(version: 20141030230318) do
 
   create_table "coachings", force: true do |t|
     t.integer  "skater_id"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20141028213944) do
   create_table "notes", force: true do |t|
     t.string   "text"
     t.string   "source"
-    t.string   "public"
+    t.integer  "public",       limit: 255
     t.integer  "notable_id"
     t.string   "notable_type"
     t.datetime "created_at"
