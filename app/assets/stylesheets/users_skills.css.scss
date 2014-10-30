@@ -1,3 +1,41 @@
 // Place all the styles related to the UsersSkills controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#level-skills-list {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#level-skills-list div {
+	display: inline-block;
+	overflow: auto;
+	vertical-align: middle;
+	padding: 0;
+}
+
+#level-skills-list div a {
+	display: inline-block;
+	margin: 0;
+	padding-left: 0;
+}
+
+li.users-skill-progress {
+	vertical-align: middle;
+	margin: 8px 0;
+}
+
+.skill-label {
+	margin: auto;
+	width: 25%;
+}
+
+.skill-rating {
+	width: 75%;
+}
+
+input.skill-slider {
+	width: 100%;
+	margin: 0;
+}

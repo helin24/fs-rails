@@ -1,22 +1,26 @@
-<div id="user-link">
-	<%= link_to "<< #{@users_level.user.name}", user_path(@users_level.user) %>
-</div>
+<%= render partial: "static_pages/nav", locals: {user: @users_level.user, users_levels: @users_level.user.users_levels, users_level: @users_level, active: "users_level"} %>
 
-<%= form_for @users_level, method: "put" do |f| %>
-	<datalist id="progress-marks">
-		<% (UsersSkill.max_progress + 1).times do |num| %>
-		<option><%= num - 1 %></option>
+<div id="content">
+	<%= form_for @users_level, method: "put" do |f| %>
+		<datalist id="progress-marks">
+			<% (UsersSkill.max_progress + 1).times do |num| %>
+			<option><%= num - 1 %></option>
+			<% end %>
+		</datalist>
+
+		<ul id="level-skills-list">
+		<% @users_level.users_skills.each do |users_skill| %>
+			<li class="users-skill-progress">
+				<div class="skill-label">
+					<%= link_to "#{users_skill.skill.name}", users_skill_path(users_skill) %>
+				</div><!--
+			--><div class="skill-rating">
+					<input type="range" name="users_skill_progress[<%= users_skill.id %>" class="skill-slider" value="<%= users_skill.progress %>" min="0" max="<%= UsersSkill.max_progress %>" list="progress-marks">
+				</div>
+			</li>
 		<% end %>
-	</datalist>
+		</ul>
 
-	<ul>
-	<% @users_level.users_skills.each do |users_skill| %>
-		<li>
-			<%= link_to "#{users_skill.skill.name}", users_skill_path(users_skill) %>
-			<input type="range" name="users_skill_progress[<%= users_skill.id %>" id="users-skill-progress" value="<%= users_skill.progress %>" min="0" max="<%= UsersSkill.max_progress %>" list="progress-marks">
-		</li>
+		<input type="submit" value="Edit">
 	<% end %>
-	</ul>
-
-	<input type="submit" value="Edit">
-<% end %>
+</div>

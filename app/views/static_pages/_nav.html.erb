@@ -1,0 +1,24 @@
+<ul id="nav-bar">
+	<% if user ||= false %>
+		<li <%= "class=selected" if active == "user" %>>
+			<%= link_to user_path(user) do %>
+				<%= gravatar_for user %>
+			<% end %>
+		</li>
+	<% end %>
+	<% if users_levels ||= false %>
+		<li <%= "class=selected" if active == "users_levels" %>>
+			<%= link_to "ISI Progress", user_progress_path(user) %>
+		</li>
+	<% end %>
+	<% if users_level ||= false %>
+		<li <%= "class=selected" if active == "users_level" %>>
+			<%= link_to users_level.level.name, users_level_path(users_level) %>
+		</li>
+	<% end %>
+	<% if users_skill ||= false %>
+		<li <%= "class=selected" if active == "users_skill" %>>
+			<%= link_to users_skill.skill.name, users_skill_path(users_skill) %>
+		</li>
+	<% end %>
+</ul>

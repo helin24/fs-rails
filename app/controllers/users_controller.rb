@@ -15,10 +15,14 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		puts params
 		@user = User.find(params[:id])
 		@users_levels = @user.users_levels
 		@coaching = Coaching.new
+	end
+
+	def progress
+		@user = User.find(params[:id])
+		@users_levels = @user.users_levels
 	end
 
 	def edit
