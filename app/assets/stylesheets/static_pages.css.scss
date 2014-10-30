@@ -115,11 +115,26 @@
 
 /* User-specific nav bar */
 #nav-bar {
-  /*text-align: center;*/
   list-style: none;
   margin: 0;
   padding: 0;
   line-height: 36px;
+  position: relative;
+  font-size: 0px;
+}
+
+#nav-bar:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  /*border-bottom: 1px solid darkblue;*/
+  z-index: 1;
+}
+
+#nav-bar:first-child {
+  left: 10px;
 }
 
 #nav-bar li {
@@ -128,15 +143,20 @@
   background-color: #a0c0f0;
   opacity: 0.9;
   display: inline-block;
+  font-size: 16px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
 #nav-bar li.selected {
   font-weight: bold;
   background-color: white;
+  border-bottom: 1px solid white;
+  z-index: 2;
 }
 
 #nav-bar li img {
-  height: 36px;
+  height: 35px;
   border-radius: 100%;
   vertical-align: middle;
 }
@@ -158,9 +178,10 @@
   width: 100%;
   padding: 20px;
   border: 1px solid darkblue;
+  border-top: 0;
   background-color: white;
   opacity: 0.9;
-  border-radius: 10px;
+  border-radius: 10px 10px 10px 10px;
   font-family: 'Josefin Sans', sans-serif;
   z-index: 1;
 }
