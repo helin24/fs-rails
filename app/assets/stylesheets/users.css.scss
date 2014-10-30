@@ -2,3 +2,61 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* Progress bars for users */
+
+#progress-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.user-level-name {
+	display: inline-block;
+	width: 25%;
+	padding-left: 8px;
+	box-sizing: border-box;
+}
+
+.user-level-progress {
+	display: inline-block;
+	width: 75%;
+}
+
+.user-level-bar {
+	width: 100%;
+}
+
+li.level-info {
+  padding-bottom: 0.25em;
+  padding-top: 0.25em;
+  border-bottom: 1px solid lightgrey;
+}
+
+li.level-info:first-child {
+  border-top: 1px solid lightgrey;
+}
+
+progress::-webkit-progress-bar {
+  background: #EEE;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
+  border-radius: 3px;
+}
+
+progress::-webkit-progress-value {
+  background-color: green;
+  border-radius: 3px;
+}
+
+progress {
+  background: #EEE;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
+  border-radius: 3px;
+  width: 100%;
+}
+
+progress::-moz-progress-bar {
+  background-color: #CC0000;
+  border-radius: 3px;
+}
+
+.user-level-bar {}

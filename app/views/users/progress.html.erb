@@ -3,13 +3,13 @@
 <div id="content">
 	<div id="progress">
 		<h2>Progress on Levels</h2>	
-		<ul>
+		<ul id="progress-list">
 			<% @users_levels.each do |users_level| %>
-			<li>
+			<li class="level-info">
 				<div class="user-level-name">
 					<%= link_to "#{users_level.level.name}", users_level_path(users_level) %>
-				</div>
-				<div class="user-level-progress">
+				</div><!--
+			--><div class="user-level-progress">
 					<progress class="user-level-bar" value="<%= users_level.learned_points %>" max="<%= users_level.total_points %>"></progress>
 				</div>
 			</li>
