@@ -9,7 +9,7 @@
 		</datalist>
 
 		<ul id="level-skills-list">
-		<% @users_level.users_skills.each do |users_skill| %>
+		<% @users_level.users_skills.order(:id).each do |users_skill| %>
 			<li class="users-skill-progress">
 				<div class="skill-label">
 					<%= link_to "#{users_skill.skill.name}", users_skill_path(users_skill) %>
