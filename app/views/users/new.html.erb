@@ -1,6 +1,6 @@
-<div id="create-user-page">
-<%= flash[:error] %>
+<div class="user-info-page">
 <h2>Join EdgeTracer!</h2>
+<%= flash[:error] %>
 <hr>
 <%= form_for @user, html: {id: "create-user-form"} do |f| %>
 	<%= label_tag :name %><%= f.text_field :name %>

@@ -1,6 +1,5 @@
 <div id="login-page">
 	<% provide(:title, "Sign In") %>
-	<!-- <h1>Sign In</h1> -->
 
 	<%= form_for(:session, url: sessions_path, html: {id: "sign-in-form"}) do |f| %>
 		<%= f.text_field :email, placeholder: "Email" %> 
