@@ -1,13 +1,18 @@
-<div id="content">
+<div class="user-info-page">
+<h2>Join EdgeTracer!</h2>
 <%= flash[:error] %>
-<%= form_for @user do |f| %>
-	<%= f.text_field :name, placeholder: "Name" %>
-	<%= f.email_field :email, placeholder: "Email" %>
-	<%= f.text_area :about, placeholder: "About" %>
-	<%= f.date_field :birthday, placeholder: "Birthday" %>
-	<%= f.date_field :started_skating, placeholder: "Started Skating" %>
-	<%= f.password_field :password, placeholder: "Password" %>
-	<%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %>
+<hr>
+<%= form_for @user, html: {id: "create-user-form"} do |f| %>
+	<%= label_tag :name %><%= f.text_field :name %>
+	<%= label_tag :email %><%= f.email_field :email %>
+	<%= label_tag :password %><%= f.password_field :password %>
+	<%= label_tag :"Retype Password" %><%= f.password_field :password_confirmation %>
+	<hr>
+	<%= label_tag :birthday %><%= f.date_field :birthday %>
+	<%= label_tag :started_skating %><%= f.date_field :started_skating %>
+	<hr>
+	<%= label_tag :"Tell us about yourself!" %>
+	<%= f.text_area :about %>
 	<%= f.submit "Create Account" %>
 <% end %>	
 </div>

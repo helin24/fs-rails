@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
 	def progress
 		@user = User.find(params[:id])
-		@users_levels = @user.users_levels
+		@users_levels = @user.users_levels.order(:id)
 	end
 
 	def edit

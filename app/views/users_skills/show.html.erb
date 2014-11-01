@@ -5,9 +5,9 @@
 
 	<div id="user-notes-list">
 		<h4>My Notes</h4>
-		<ul id="user-notes-ul">
+		<ul id="user-notes-ul" class="skill-notes-list">
 			<% @users_skill.notes.each do |note| %>
-			<li>
+			<li class="skill-note">
 				<%= render partial: "notes/show", locals: {note: note } %>
 			</li>
 			<% end %>
@@ -16,9 +16,9 @@
 
 	<div id="public-notes-list">
 		<h4>Other Notes</h4>
-		<ul>
+		<ul class="skill-notes-list">
 			<% @public_notes.each do |note| %>
-			<li>
+			<li class="skill-note">
 				<%= render partial: "notes/show", locals: {note: note} %>
 			</li>
 			<% end %>

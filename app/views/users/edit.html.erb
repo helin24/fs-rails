@@ -1,11 +1,14 @@
-<div id="content">
+<div class="user-info-page">
 <%= flash[:error] %>
-<%= form_for @user do |f| %>
-	<%= f.text_field :name, value: @user.name, placeholder: "Name" %>
-	<%= f.email_field :email, value: @user.email, placeholder: "Email" %>
+<%= form_for @user, html: {id: "create-user-form"} do |f| %>
+	<%= label_tag :name %><%= f.text_field :name, value: @user.name, placeholder: "Name" %>
+	<%= label_tag :email %><%= f.email_field :email, value: @user.email, placeholder: "Email" %>
+	<hr>
+	<%= label_tag :birthday %><%= f.date_field :birthday, value: @user.birthday, placeholder: "Birthday" %>
+	<%= label_tag :started_skating %><%= f.date_field :started_skating, value: @user.started_skating, placeholder: "Started Skating" %>
+	<hr>
+	<%= label_tag :"Tell us about yourself!" %>
 	<%= f.text_area :about, value: @user.about, placeholder: "About" %>
-	<%= f.date_field :birthday, value: @user.birthday, placeholder: "Birthday" %>
-	<%= f.date_field :started_skating, value: @user.started_skating, placeholder: "Started Skating" %>
-	<%= f.submit "Edit" %>
+	<%= f.submit "Save Changes" %>
 <% end %>	
 </div>

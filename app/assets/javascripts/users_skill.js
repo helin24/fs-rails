@@ -45,8 +45,8 @@ $(document).ready(function() {
 	};
 
 	var showNoteText = function($elem) {
-		$elem.parent().find(".note-text").css("display", "inline");
-		$elem.parent().find(".edit-note-link").css("display", "inline");
+		$elem.parent().find(".note-text").css("display", "inline-block");
+		$elem.parent().find(".edit-note-link").css("display", "inline-block");
 	};
 
 	var hideNoteEdit = function($elem) {
