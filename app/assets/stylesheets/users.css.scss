@@ -84,11 +84,11 @@ hr {
 li.level-info {
   padding-bottom: 0.25em;
   padding-top: 0.25em;
-  border-bottom: 1px solid $primary-color;
+  border-bottom: 1px solid $light-color;
 }
 
 li.level-info:first-child {
-  border-top: 1px solid lightgrey;
+  border-top: 1px solid $light-color;
 }
 
 progress::-webkit-progress-bar {
@@ -98,7 +98,7 @@ progress::-webkit-progress-bar {
 }
 
 progress::-webkit-progress-value {
-  background-color: green;
+  background-color: $medium-color;
   border-radius: 3px;
 }
 
