@@ -212,13 +212,10 @@ li a:link {
 }
 
 /*//////////////////// FORMS /////////////////////*/
-#sign-in-form {
-}
 
-#session_email, #session_password {
-  display: block;
+input {
+  display: inline-block;
   font-size: 16px;
-  /*border: 2px solid $primary-color;  */
   border-radius: 4px;
   background-color: $light-color;
   border: 1px solid $medium-color;
@@ -228,6 +225,18 @@ li a:link {
   color: $primary-color;
   box-sizing: border-box;
   font-weight: bold;
+}
+
+textarea {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  color: $primary-color;
+  border-radius: 4px;
+  background-color: white;
+  border: 1px solid $medium-color; 
+  box-sizing: border-box;
+  resize: none;
 }
 
 #session_email {
