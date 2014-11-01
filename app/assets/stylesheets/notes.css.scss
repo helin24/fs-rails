@@ -34,14 +34,17 @@ form#new_note, form.edit_note {
 }
 
 .note-text {
-	display: inline;
+	display: inline-block;
+	width: 90%;
 }
 
 .edit-note-link {
-	display: inline;
+	display: inline-block;
+	width: 5%;
 }
 
 .delete-note-link {
-	display: inline;
+	display: inline-block;
+	width: 5%;
 }
 

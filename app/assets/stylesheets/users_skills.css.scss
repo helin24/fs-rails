@@ -1,6 +1,18 @@
-// Place all the styles related to the UsersSkills controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables';
+
+.skill-notes-list {
+	list-style-type: none;
+	padding: 0;
+}
+
+.skill-note {
+	border-bottom: 1px solid $light-color;
+	padding: 4px 0px;
+}
+
+.skill-note:first-child {
+	border-top: 1px solid $light-color;
+}
 
 #level-skills-list {
 	list-style-type: none;
