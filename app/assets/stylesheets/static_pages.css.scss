@@ -3,6 +3,7 @@
 /*//////////////////// General //////////////?*/
 * {
   color: $black-color;
+  font-family: JosefinSans;
 }
 
 /*/////////////////// Background /////////////*/
@@ -51,6 +52,8 @@
 }
 
 #title {
+  font-family: 'Courgette';
+  font-size: 30px;
   margin: 5px;
   color: #eee;
   padding: 0;
@@ -92,7 +95,22 @@
   vertical-align: middle;
 }
 
-/* Icon Fonts */
+/*/////////////// Fonts //////////////////*/
+@font-face {
+  font-family: Courgette;
+  src: font-url('Courgette/Courgette-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: JosefinSans;
+  src: font-url('Josefin_Sans/JosefinSans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: JosefinSans;
+  src: font-url('Josefin_Sans/JosefinSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
 @font-face {
   font-family: 'Icomoon';
   src:font-url('icomoon.eot');
