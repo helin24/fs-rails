@@ -1,12 +1,24 @@
+<% provide(:title, @user.name) %>
 <%= render partial: "static_pages/nav", locals: {user: @user, users_levels: @user.users_levels, active: "user"} %>
 
 <div id="content">
-	<% provide(:title, @user.name) %>
-	<%= @user.name %>, <%= @user.email %>
+	<div id="profile-picture">
+		<img src="http://public.slidesharecdn.com/b/images/user-96x96.png">
+	</div><!--
+--><div id="user-info-stats">
+		<h1><%= @user.name %></h1>
+		<ul id="user-info-stats-list">
+			<li><%= @user.email %></li>
+			<li>Joined <%= @user.created_at.strftime("%m/%d/%Y") %></li>
+			<% if @user.started_skating %><li>Started skating <%= @user.started_skating.strftime("%b-%Y") %></li><% end %>
+			<li><%= @user.notes.count %> Notes</li>
+		</ul>
+		<% if @user == current_user %>
+			<%= link_to "Edit", edit_user_path %>
+		<% end %>
+	</div>
 
 	<% if @user == current_user %>
-		<%= link_to "Edit", edit_user_path %>
-
 		<div id="coaching">
 			<% if @user.coaches.empty? == false %>
 				<h2>Coaches</h2>

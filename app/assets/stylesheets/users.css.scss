@@ -1,6 +1,6 @@
 @import 'variables';
 
-/* Create new user */
+/*/////////////// Create new user ////////////////*/
 .user-info-page {
   box-sizing: border-box;
   margin: 0 auto;
@@ -57,7 +57,7 @@ hr {
   border-bottom: 1px solid $medium-color;
 }
 
-/* Progress bars for users */
+/*//////////// Progress bars for users ////////*/
 
 #progress-list {
 	list-style-type: none;
@@ -114,4 +114,26 @@ progress::-moz-progress-bar {
   border-radius: 3px;
 }
 
-.user-level-bar {}
+/*//////////////// Profile Page ////////////*/
+#profile-picture {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 30%;
+  height: 240px;
+  /*border: 1px solid $dark-color;*/
+  vertical-align: top;
+}
+
+#user-info-stats {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 70%;
+  /*border: 1px solid $dark-color;*/
+  padding: 0 8px;
+  vertical-align: top;
+}
+
+#user-info-stats-list {
+  list-style-type: none;
+  padding: 0;
+}
