@@ -1,0 +1,50 @@
+/*/////////////// Fonts //////////////////*/
+
+@font-face {
+  font-family: Courgette;
+  src: url(<%= asset_path 'Courgette/Courgette-Regular.ttf' %>) format('truetype');
+}
+
+@font-face {
+  font-family: JosefinSans;
+  src: url(<%= asset_path 'Josefin_Sans/JosefinSans-Regular.ttf' %>) format('truetype');
+}
+
+@font-face {
+  font-family: JosefinSans;
+  src: url(<%= 'Josefin_Sans/JosefinSans-Bold.ttf' %>) format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Icomoon';
+  src:url(<%= asset_path 'icomoon.eot' %>);
+  src:url(<%= asset_path 'icomoon.eot?#iefix' %>) format('embedded-opentype'),
+    url(<%= asset_path 'icomoon.svg#icomoon' %>) format('svg'),
+    url(<%= asset_path 'icomoon.woff' %>) format('woff'),
+    url(<%= asset_path 'icomoon.ttf' %>) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#log-out-icon:before {
+  content: '\e618';
+  font-family: 'Icomoon';
+  speak: none;
+  font-size: 32px;
+  color: #eee;
+}
+
+#profile-icon:before {
+  content: '\e60c';
+  font-family: 'Icomoon';
+  speak: none;
+  font-size: 32px;
+  color: #eee;
+}
+
+/*//////////////////// General //////////////?*/
+* {
+  color: $black-color;
+  font-family: JosefinSans;
+}
