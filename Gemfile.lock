@@ -51,6 +51,8 @@ GEM
     erubis (2.7.0)
     execjs (2.2.1)
     ffi (1.9.3)
+    font_assets (0.1.11)
+      rack
     hashery (2.1.1)
     hike (1.2.3)
     i18n (0.6.11)
@@ -166,6 +168,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   capybara
   coffee-rails (~> 4.0.0)
+  font_assets
   jbuilder (~> 2.0)
   jquery-rails
   newrelic_rpm

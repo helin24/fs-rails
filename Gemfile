@@ -46,6 +46,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pdf-reader'
 
 gem 'newrelic_rpm'
+gem 'font_assets'
 # Use unicorn as the app server
 # gem 'unicorn'
 
