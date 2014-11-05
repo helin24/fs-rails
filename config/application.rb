@@ -22,6 +22,6 @@ module FsRails
     config.assets.digest = true
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
-    config.assets.precompile = ['*.css.erb']
+    # config.assets.precompile = ['*.css.erb']
   end
 end
