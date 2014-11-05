@@ -82,7 +82,7 @@ $(document).ready(function() {
 	};
 
 	var addNote = function(noteHtml) {
-		$("#user-notes-ul").append("<li>" + noteHtml + "</li>");
+		$("#user-notes-ul").append("<li class='skill-note'>" + noteHtml + "</li>");
 	};
 
 	var clearNoteAdd = function() {
