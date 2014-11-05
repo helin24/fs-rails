@@ -36,4 +36,5 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   # config.serve_static_assets = false
+  config.assets.precompile = ['*.css.erb']
 end
