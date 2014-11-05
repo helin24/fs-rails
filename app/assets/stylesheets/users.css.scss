@@ -146,3 +146,20 @@ progress::-moz-progress-bar {
     width: 200px;
   }
 }
+
+.edit_coaching {
+  display: inline-block;
+  vertical-align: middle;
+  input[type="submit"] {
+    display: inline-block;
+    font-size: 16px;
+    padding: 0 4px;
+    height: 24px;
+    margin: 0;
+  }
+}
+
+.coach-name {
+  font-size: 20px;
+  vertical-align: middle;
+}
