@@ -11,7 +11,7 @@
 			<li><%= @user.email %></li>
 			<li>Joined <%= @user.created_at.strftime("%m/%d/%Y") %></li>
 			<% if @user.started_skating %><li>Started skating <%= @user.started_skating.strftime("%b-%Y") %></li><% end %>
-			<li><%= @user.notes.count %> Notes</li>
+			<li><%= @user.notes.where(public: true).count %> Shared Notes</li>
 		</ul>
 		<% if @user == current_user %>
 			<%= link_to "Edit", edit_user_path %>
