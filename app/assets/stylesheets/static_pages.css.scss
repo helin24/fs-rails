@@ -46,11 +46,11 @@
 }
 */
 /*//////////////////// General //////////////?*/
-/** {
+* {
   color: $black-color;
   font-family: JosefinSans;
 }
-*/
+
 
 /*/////////////////// Background /////////////*/
 #background {
@@ -140,6 +140,51 @@
   border-radius: 100%;
   vertical-align: middle;
 }
+
+/*/////////////// Fonts //////////////////*/
+@font-face {
+  font-family: Courgette;
+  src: asset-url('Courgette/Courgette-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: JosefinSans;
+  src: asset-url('Josefin_Sans/JosefinSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: JosefinSans;
+  src: asset-url('Josefin_Sans/JosefinSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Icomoon';
+  src:asset-url('icomoon.eot');
+  src:asset-url('icomoon.eot?#iefix') format('embedded-opentype'),
+    asset-url('icomoon.svg#icomoon') format('svg'),
+    asset-url('icomoon.woff') format('woff'),
+    asset-url('icomoon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#log-out-icon:before {
+  content: '\e618';
+  font-family: 'Icomoon';
+  speak: none;
+  font-size: 32px;
+  color: #eee;
+}
+
+#profile-icon:before {
+  content: '\e60c';
+  font-family: 'Icomoon';
+  speak: none;
+  font-size: 32px;
+  color: #eee;
+}
+
 
 /* User-specific nav bar */
 #nav-bar {
