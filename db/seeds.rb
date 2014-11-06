@@ -4,6 +4,7 @@ require 'csv'
 
 Level.delete_all
 Skill.delete_all
+TestLevel.delete_all
 
 Level.create(name: 'Pre-Alpha', organization: 'ISI')
 Level.create(name: 'Alpha', organization: 'ISI')
@@ -34,6 +35,21 @@ end
 
 # This information is taken from USFSA PDF (updated yearly)
 
+TestLevel.create(name: "Pre-Preliminary", standard_code: "PPM")
+TestLevel.create(name: "Preliminary", standard_code: "PM")
+TestLevel.create(name: "Pre-Juvenile", standard_code: "PJM")
+TestLevel.create(name: "Juvenile", standard_code: "JM")
+TestLevel.create(name: "Intermediate", standard_code: "IM")
+TestLevel.create(name: "Novice", standard_code: "NM")
+TestLevel.create(name: "Junior", standard_code: "JRM")
+TestLevel.create(name: "Senior", standard_code: "SRM")
+TestLevel.create(name: "Intermediate Supplemental", standard_code: "ISM")
+TestLevel.create(name: "Senior Supplemental", standard_code: "SSM")
+TestLevel.create(name: "Adult Pre-Bronze", standard_code: "APBM")
+TestLevel.create(name: "Adult Bronze", standard_code: "ABM")
+TestLevel.create(name: "Adult Silver", standard_code: "ASM")
+TestLevel.create(name: "Adult Gold", standard_code: "AGM")
+
 # PDF page number inputs
 
 level_summary_page = 297 # page that provides a summary of test levels and standard codes
@@ -45,3 +61,9 @@ file = 'Rulebook20140814' # file should be saved in lib/assets
 ####### NEED TO REMIGRATE TEST LEVELS AND FIELD MOVES TABLES ###
 
 # Field Moves
+book = PDF::Reader.new('lib/assets/Rulebook20140814.pdf')
+
+(mitf_start_page..mitf_end_page).each do |p|
+	text = book.page(p)
+	test_level_name = text.
+end
