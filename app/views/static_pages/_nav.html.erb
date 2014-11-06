@@ -31,4 +31,9 @@
 			<%= link_to users_skill.skill.name, users_skill_path(users_skill) %>
 		</li>
 	<% end %>
+	<% if users_field_move ||= false %>
+		<li <%= "class=selected" if active == "users_field_move" %>>
+			<%= link_to users_field_move.field_move.name, users_field_move_path(users_field_move) %>
+		</li>
+	<% end %>
 </ul>

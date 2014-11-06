@@ -4,5 +4,6 @@ class Skill < ActiveRecord::Base
 	belongs_to :level
 	has_many :notes, through: :users_skills
 
-	has_and_belongs_to_many :field_moves
+	has_many :field_moves_skills
+	has_and_belongs_to_many :field_moves, through: :field_moves_skills
 end
