@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141030230318) do
+ActiveRecord::Schema.define(version: 20141026144551) do
 
   create_table "coachings", force: true do |t|
     t.integer  "skater_id"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20141030230318) do
 
   create_table "field_moves", force: true do |t|
     t.string   "name"
+    t.string   "image"
+    t.string   "description"
     t.integer  "test_level_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -50,13 +52,13 @@ ActiveRecord::Schema.define(version: 20141030230318) do
   create_table "notes", force: true do |t|
     t.string   "text"
     t.string   "source"
-    t.integer  "public",       limit: 255
+    t.integer  "public"
     t.integer  "notable_id"
     t.string   "notable_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "notes", ["author_id"], name: "index_notes_on_author_id"
@@ -71,7 +73,7 @@ ActiveRecord::Schema.define(version: 20141030230318) do
 
   create_table "test_levels", force: true do |t|
     t.string   "name"
-    t.string   "image"
+    t.string   "standard_code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
