@@ -4,5 +4,9 @@ class UsersTestLevel < ActiveRecord::Base
 	has_many :users_field_moves
 	has_many :notes, as: :notable
 
-	# add amount of progress?
+	def compute
+		self.learned_points = self.users_field_moves.sum(:progress)
+		self.total_points = self.users_field_moves.count * UsersFieldMove.max_progress
+		self.save
+	end
 end
