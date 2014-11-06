@@ -1,0 +1,26 @@
+<%= render partial: "static_pages/nav", locals: {user: @users_test_level.user, users_test_levels: @users_test_level.user.users_test_levels, users_test_level: @users_test_level, active: "users_test_level"} %>
+
+<div id="content">
+	<%= form_for @users_test_level, method: "put" do |f| %>
+		<datalist id="progress-marks">
+			<% (UsersFieldMove.max_progress + 1).times do |num| %>
+			<option><%= num - 1 %></option>
+			<% end %>
+		</datalist>
+
+		<ul id="level-skills-list">
+		<% @users_test_level.users_field_moves.order(:id).each do |users_field_move| %>
+			<li class="users-skill-progress">
+				<div class="skill-label">
+					<%= link_to "#{users_field_move.field_move.name}", users_field_move_path(users_field_move) %>
+				</div><!--
+			--><div class="skill-rating">
+					<input type="range" name="users_skill_progress[<%= users_field_move.id %>" class="skill-slider" value="<%= users_field_move.progress %>" min="0" max="<%= UsersFieldMove.max_progress %>" list="progress-marks">
+				</div>
+			</li>
+		<% end %>
+		</ul>
+
+		<input type="submit" value="Edit">
+	<% end %>
+</div>

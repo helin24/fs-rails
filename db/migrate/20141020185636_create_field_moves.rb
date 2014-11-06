@@ -3,6 +3,7 @@ class CreateFieldMoves < ActiveRecord::Migration
     create_table :field_moves do |t|
     	t.string :name
     	t.string :image
+    	t.string :description
     	t.references :test_level, index: true
 
       t.timestamps

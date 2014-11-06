@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141030230318) do
+ActiveRecord::Schema.define(version: 20141026144551) do
 
   create_table "coachings", force: true do |t|
     t.integer  "skater_id"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20141030230318) do
 
   create_table "field_moves", force: true do |t|
     t.string   "name"
+    t.string   "image"
+    t.string   "description"
     t.integer  "test_level_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -50,13 +52,13 @@ ActiveRecord::Schema.define(version: 20141030230318) do
   create_table "notes", force: true do |t|
     t.string   "text"
     t.string   "source"
-    t.integer  "public",       limit: 255
+    t.integer  "public"
     t.integer  "notable_id"
     t.string   "notable_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "notes", ["author_id"], name: "index_notes_on_author_id"
@@ -71,7 +73,7 @@ ActiveRecord::Schema.define(version: 20141030230318) do
 
   create_table "test_levels", force: true do |t|
     t.string   "name"
-    t.string   "image"
+    t.string   "standard_code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -94,15 +96,15 @@ ActiveRecord::Schema.define(version: 20141030230318) do
   create_table "users_field_moves", force: true do |t|
     t.integer  "user_id"
     t.integer  "field_move_id"
-    t.integer  "user_test_level_id"
-    t.integer  "progress"
+    t.integer  "users_test_level_id"
+    t.integer  "progress",            default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "users_field_moves", ["field_move_id"], name: "index_users_field_moves_on_field_move_id"
   add_index "users_field_moves", ["user_id"], name: "index_users_field_moves_on_user_id"
-  add_index "users_field_moves", ["user_test_level_id"], name: "index_users_field_moves_on_user_test_level_id"
+  add_index "users_field_moves", ["users_test_level_id"], name: "index_users_field_moves_on_users_test_level_id"
 
   create_table "users_levels", force: true do |t|
     t.integer  "user_id"
@@ -133,6 +135,8 @@ ActiveRecord::Schema.define(version: 20141030230318) do
     t.integer  "user_id"
     t.integer  "test_level_id"
     t.date     "achieved_on"
+    t.integer  "learned_points", default: 0
+    t.integer  "total_points",   default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

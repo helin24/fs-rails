@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
 	has_secure_password
 
 	before_save { self.email = email.downcase }
-	after_create :add_levels, :add_skills, :relate_skills_levels
+	after_create :add_levels, :add_skills, :relate_skills_levels, :add_test_levels, :add_field_moves, :relate_moves_tests
 
 	def self.new_remember_token
 		SecureRandom.urlsafe_base64
@@ -42,10 +42,25 @@ class User < ActiveRecord::Base
 		self.skills << Skill.all
 	end
 
+	def add_test_levels
+		self.test_levels << TestLevel.all
+	end
+
+	def add_field_moves
+		self.field_moves << FieldMove.all
+	end
+
 	def relate_skills_levels
 		self.users_levels.each do |users_level|
 			users_level.users_skills << users_level.level.skills.map{|s| s.users_skills.where(user_id: self.id)}
 			users_level.compute
+		end
+	end
+
+	def relate_moves_tests
+		self.users_test_levels.each do |users_test_level|
+			users_test_level.users_field_moves << users_test_level.test_level.field_moves.map{|fm| fm.users_field_moves.where(user_id: self.id)}
+			users_test_level.compute
 		end
 	end
 

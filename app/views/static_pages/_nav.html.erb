@@ -11,14 +11,29 @@
 			<%= link_to "ISI Progress", user_progress_path(user) %>
 		</li>
 	<% end %>
+	<% if users_test_levels ||= false %>
+		<li <%= "class=selected" if active == "users_test_levels" %>>
+			<%= link_to "Test Progress", user_test_progress_path(user) %>
+		</li>
+	<% end %>	
 	<% if users_level ||= false %>
 		<li <%= "class=selected" if active == "users_level" %>>
 			<%= link_to users_level.level.name, users_level_path(users_level) %>
 		</li>
 	<% end %>
+	<% if users_test_level ||= false %>
+		<li <%= "class=selected" if active == "users_test_level" %>>
+			<%= link_to users_test_level.test_level.name, users_test_level_path(users_test_level) %>
+		</li>
+	<% end %>
 	<% if users_skill ||= false %>
 		<li <%= "class=selected" if active == "users_skill" %>>
 			<%= link_to users_skill.skill.name, users_skill_path(users_skill) %>
+		</li>
+	<% end %>
+	<% if users_field_move ||= false %>
+		<li <%= "class=selected" if active == "users_field_move" %>>
+			<%= link_to users_field_move.field_move.name, users_field_move_path(users_field_move) %>
 		</li>
 	<% end %>
 </ul>

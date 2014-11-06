@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :users
   get '/users/:id/progress' => 'users#progress', as: :user_progress
+  get '/users/:id/test_progress' => 'users#test_progress', as: :user_test_progress
 
   resources :notes
   resources :coachings
@@ -17,7 +18,10 @@ Rails.application.routes.draw do
   get '/users_levels/:id' => 'users_levels#show', as: :users_level
   put '/users_levels/:id' => 'users_levels#update'
 
+  get '/users_test_levels/:id' => 'users_test_levels#show', as: :users_test_level
+
   get '/users_skills/:id' => 'users_skills#show', as: :users_skill
+  get '/users_field_moves/:id' => 'users_field_moves#show', as: :users_field_move
 
   get '/signin' => 'sessions#new', as: :signin
   post '/signin' => 'sessions#create', as: :sessions
