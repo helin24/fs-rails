@@ -1,4 +1,4 @@
-<%= link_to "#{coaching.skater.name}", user_path(coaching.skater) %>
+<%= link_to "#{coaching.skater.name}", user_path(coaching.skater), class: "coach-skater-name" %>
 <% if coaching.coach_confirmed %>
 	<%= form_for coaching do |f| %>
 		<%= f.hidden_field :coach_confirmed, value: false %>
