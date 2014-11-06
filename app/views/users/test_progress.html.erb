@@ -1,0 +1,19 @@
+<%= render partial: "static_pages/nav", locals: {user: @user, users_levels: @user.users_levels, users_test_levels: @user.users_test_levels, active: "users_test_levels"} %>
+
+<div id="content">
+	<div id="progress">
+		<h2>Progress on Tests</h2>	
+		<ul id="progress-list">
+			<% @users_test_levels.each do |users_test_level| %>
+			<li class="level-info">
+				<div class="user-level-name">
+					<%= link_to "#{users_test_level.test_level.name}", users_test_level_path(users_test_level) %>
+				</div><!--
+			--><div class="user-level-progress">
+					<progress class="user-level-bar" value="<%= users_test_level.learned_points %>" max="<%= users_test_level.total_points %>"></progress>
+				</div>
+			</li>
+			<% end %>
+		</ul>
+	</div>
+</div>
