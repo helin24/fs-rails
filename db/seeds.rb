@@ -64,6 +64,8 @@ file = 'Rulebook20140814' # file should be saved in lib/assets
 book = PDF::Reader.new('lib/assets/Rulebook20140814.pdf')
 
 (mitf_start_page..mitf_end_page).each do |p|
-	text = book.page(p)
-	test_level_name = text.
+	text = book.page(p).text
+	test_level_name = text.match(/[a-zA-Z-]+/)[0]
+	field_move_name = text.split(/\n/)[3].strip
+	FieldMove.create(name: field_move_name, test_level: TestLevel.find(name: test_level_name))
 end
