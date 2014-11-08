@@ -32,6 +32,12 @@ class DiagramSelector
 	end
 
 	def crop_by_color(color)
+		limits = color_range(color)
+		x = limits["left"]
+		y = limits["top"]
+		width = limits["right"] - x
+		height = limits["bottom"] - y
+		@pic.excerpt(x, y, width, height)
 	end
 
 	def color_range(color, grid_size = 100)
@@ -42,11 +48,29 @@ class DiagramSelector
 
 		row_appearances = color_appearance_rows(color, grid_size)
 		col_appearances = color_appearance_cols(color, grid_size)
-		
+
+		left = find_first(row_appearances, grid_size)
+		right = @pic.columns - find_first(row_appearances.map{|pixels| pixels.reverse}, grid_size)
+		top = find_first(col_appearances, grid_size)
+		bottom = @pic.rows - find_first(col_appearances.map{|pixels| pixels.reverse}, grid_size)
+		puts "found left #{left} right #{right} top #{top} bottom #{bottom}"
+		limits = {"left" => left, "right" => right, "top" => top, "bottom" => bottom}
+	end
+
+	def find_first(appearances, grid_size)
+		firsts = []
+		appearances.each do |pixels|
+			firsts << pixels.find_index(true)
+		end
+
+		firsts.delete_if{|num| num == nil }
+
+		first = firsts.min
 	end
 
 	def color_appearance_rows(color, grid_size)
 		row_appearances = []
+		row = grid_size
 		until row > @pic.rows do
 			this_row = []
 			row_pixels = @pic.get_pixels(0, row, @pic.columns, 1)
@@ -61,6 +85,7 @@ class DiagramSelector
 
 	def color_appearance_cols(color, grid_size)
 		col_appearances = []
+		col = grid_size
 		until col > @pic.columns do
 			this_col = []
 			col_pixels = @pic.get_pixels(col, 0, 1, @pic.rows)
