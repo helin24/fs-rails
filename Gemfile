@@ -44,6 +44,8 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'pdf-reader'
+gem 'docsplit'
+gem 'rmagick'
 
 gem 'newrelic_rpm'
 gem 'font_assets'
