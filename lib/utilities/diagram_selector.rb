@@ -1,8 +1,6 @@
 require 'RMagick'
 include Magick
 
-# pic = ImageList.new("app/assets/images/pictures/test.png")
-
 class DiagramSelector
 	attr_reader :pic
 
@@ -31,12 +29,12 @@ class DiagramSelector
 		# return hash
 	end
 
-	def crop_by_color(color)
+	def crop_by_color(color, padding = 8)
 		limits = color_range(color)
-		x = limits["left"]
-		y = limits["top"]
-		width = limits["right"] - x
-		height = limits["bottom"] - y
+		x = limits["left"] - padding
+		y = limits["top"] - padding
+		width = limits["right"] - x + padding
+		height = limits["bottom"] - y + padding
 		@pic.excerpt(x, y, width, height)
 	end
 
