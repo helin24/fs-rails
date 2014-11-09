@@ -196,7 +196,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="1039" y="51" name="tags">
+<table x="152" y="926" name="tags">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -249,7 +249,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="165" y="756" name="practice_routines">
+<table x="497" y="783" name="practice_routines">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -257,6 +257,9 @@
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="user_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="author_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
