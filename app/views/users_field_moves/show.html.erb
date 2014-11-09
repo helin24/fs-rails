@@ -1,34 +1,35 @@
 <%= render partial: "static_pages/nav", locals: {user: @users_field_move.user, users_test_levels: @users_field_move.user.users_test_levels, users_test_level: @users_field_move.users_test_level, users_field_move: @users_field_move, active: "users_field_move"} %>
 
 <div id="content">
-	<p><%= @users_field_move.field_move.description %></p>
-	<%= image_tag "diagrams/" + @users_field_move.field_move.image %>
-	<!-- <img src="<%= asset_path('/images/diagrams/' + @users_field_move.field_move.image) %>">  -->
-	<h3>Notes for <%= @users_field_move.field_move.name %></h3>
+	<div id="field-move-diagram"><%= image_tag "diagrams/" + @users_field_move.field_move.image %></div><!--
+	--><div id="field-move-content">
+		<div id="field-move-description"><%= @users_field_move.field_move.description %></div>
+		<h3>Notes for <%= @users_field_move.field_move.name %></h3>
 
-	<div id="user-notes-list">
-		<h4>My Notes</h4>
-		<ul id="user-notes-ul" class="skill-notes-list">
-			<% @users_field_move.notes.each do |note| %>
-			<li class="skill-note">
-				<%= render partial: "notes/show", locals: {note: note } %>
-			</li>
-			<% end %>
-		</ul>
-	</div>
+		<div id="user-notes-list">
+			<h4>My Notes</h4>
+			<ul id="user-notes-ul" class="field-move-notes-list">
+				<% @users_field_move.notes.each do |note| %>
+				<li class="field-move-note">
+					<%= render partial: "notes/show", locals: {note: note } %>
+				</li>
+				<% end %>
+			</ul>
+		</div>
 
-	<div id="public-notes-list">
-		<h4>Other Notes</h4>
-		<ul class="skill-notes-list">
-			<% @public_notes.each do |note| %>
-			<li class="skill-note">
-				<%= render partial: "notes/show", locals: {note: note} %>
-			</li>
-			<% end %>
-		</ul>
-	</div>
+		<div id="public-notes-list">
+			<h4>Other Notes</h4>
+			<ul class="field-move-notes-list">
+				<% @public_notes.each do |note| %>
+				<li class="field-move-note">
+					<%= render partial: "notes/show", locals: {note: note} %>
+				</li>
+				<% end %>
+			</ul>
+		</div>
 
-	<div id="add-note-container">
-		<%= render partial: "notes/new", locals: {note: @note, notable: @users_field_move, user: @users_field_move.user } %>
+		<div id="add-note-container">
+			<%= render partial: "notes/new", locals: {note: @note, notable: @users_field_move, user: @users_field_move.user } %>
+		</div>
 	</div>
 </div>
