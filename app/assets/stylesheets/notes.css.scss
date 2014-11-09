@@ -35,16 +35,17 @@ form#new_note, form.edit_note {
 
 .note-text {
 	display: inline-block;
-	width: 90%;
+	width: 80%;
 }
 
 .edit-note-link {
 	display: inline-block;
-	width: 5%;
+	width: 10%;
+	text-align: right;
 }
 
 .delete-note-link {
 	display: inline-block;
-	width: 5%;
+	width: 10%;
+	text-align: right;
 }
-

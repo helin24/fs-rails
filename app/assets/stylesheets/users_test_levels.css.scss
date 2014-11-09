@@ -1,3 +1,41 @@
-// Place all the styles related to the UsersTestLevels controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables';
+
+#field-move-description {
+	display: inline-block;
+	padding-right: 8px;
+	box-sizing: border-box;
+}
+
+#field-move-diagram {
+	width: 35%;
+	float: right;
+	display: inline-block;
+	img {
+		width: 100%;
+	}
+}
+
+#content:after {
+	content: " ";
+	height: 0;
+	display: block;
+	clear: both;
+}
+
+#field-move-content {
+	width: 65%;
+}
+
+.field-move-notes-list {
+	list-style-type: none;
+	padding: 0;
+}
+
+.field-move-note {
+	border-bottom: 1px solid $light-color;
+	padding: 4px 0px;
+}
+
+.field-move-note:first-child {
+	border-top: 1px solid $light-color;
+}
