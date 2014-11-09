@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :email
       t.string :password_digest
-      t.string :about
+      t.text :about
       t.date :birthday
       t.date :started_skating
       t.string :remember_token
