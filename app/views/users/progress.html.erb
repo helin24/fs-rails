@@ -9,6 +9,8 @@
 				<div class="user-level-name">
 					<%= link_to "#{users_level.level.name}", users_level_path(users_level) %>
 				</div><!--
+			--><div class="user-level-checkbox">
+				</div><!--
 			--><div class="user-level-progress">
 					<progress class="user-level-bar" value="<%= users_level.learned_points %>" max="<%= users_level.total_points %>"></progress>
 				</div>

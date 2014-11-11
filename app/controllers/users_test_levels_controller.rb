@@ -14,6 +14,9 @@ class UsersTestLevelsController < ApplicationController
 		params[:users_field_move_progress].each do |id, progress|
 			UsersFieldMove.find(id).update(progress: progress)
 		end
+
+		@users_test_level.update(achieved_on: params[:users_test_level_achieved_on])
+
 		@users_test_level.compute
 		redirect_to @users_test_level
 	end
