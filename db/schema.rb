@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20141026144551) do
   create_table "field_moves", force: true do |t|
     t.string   "name"
     t.string   "image"
-    t.string   "description"
+    t.text     "description"
     t.integer  "test_level_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20141026144551) do
   end
 
   create_table "notes", force: true do |t|
-    t.string   "text"
+    t.text     "text"
     t.string   "source"
     t.integer  "public"
     t.integer  "notable_id"
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 20141026144551) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.string   "about"
+    t.text     "about"
     t.date     "birthday"
     t.date     "started_skating"
     t.string   "remember_token"

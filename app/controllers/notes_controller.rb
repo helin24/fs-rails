@@ -29,8 +29,9 @@ class NotesController < ApplicationController
 		@note = Note.find(params[:id])
 		@note_owner = @note.notable
 		@note.destroy
+
 		respond_to do |format|
-			format.html { redirect_to users_skill_path(@note_owner) }
+			format.html { redirect_to @note_owner }
 			format.js { head :ok }
 		end
 	end
