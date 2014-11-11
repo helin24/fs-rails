@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   put '/users_levels/:id' => 'users_levels#update'
 
   get '/users_test_levels/:id' => 'users_test_levels#show', as: :users_test_level
+  put '/users_test_levels/:id' => 'users_test_levels#update'
 
   get '/users_skills/:id' => 'users_skills#show', as: :users_skill
   get '/users_field_moves/:id' => 'users_field_moves#show', as: :users_field_move

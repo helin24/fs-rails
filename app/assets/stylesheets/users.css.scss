@@ -67,9 +67,17 @@ hr {
 
 .user-level-name {
 	display: inline-block;
-	width: 25%;
+	width: 20%;
 	padding-left: 8px;
 	box-sizing: border-box;
+}
+
+.user-level-checkbox {
+  width: 5%;
+  text-align: right;
+  display: inline-block;
+  box-sizing: border-box;
+  padding-right: 8px;
 }
 
 .user-level-progress {
