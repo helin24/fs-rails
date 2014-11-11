@@ -1,4 +1,8 @@
-<div class="note-text"><%= note.text %></div><!--
+<div class="note-text"><%= note.text %> 
+	<% if note.source != nil %>
+		<%= raw(note.nice_source) %>
+	<% end %>
+</div><!--
 --><% if note.author == current_user || note.user == current_user %><!--
 --><div class="edit-note-link"><%= link_to "Edit", edit_note_path(note) %></div><!--
 --><div class="delete-note-link" id="<%= note.id %>"><%= link_to "Delete", note, method: :delete %></div>
