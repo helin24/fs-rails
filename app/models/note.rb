@@ -11,6 +11,7 @@ class Note < ActiveRecord::Base
 		links.each do |link|
 			text_with_links.gsub!(link, "<a href='#{link}' target='_blank'>#{link}</a>")
 		end
+		text_with_links.gsub!(/<script(.)*\/script>/, "")
 		text_with_links
 	end
 end
