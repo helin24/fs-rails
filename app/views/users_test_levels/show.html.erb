@@ -15,7 +15,7 @@
 					<%= link_to "#{users_field_move.field_move.name}", users_field_move_path(users_field_move) %>
 				</div><!--
 			--><div class="skill-rating">
-					<input type="range" name="users_skill_progress[<%= users_field_move.id %>" class="skill-slider" value="<%= users_field_move.progress %>" min="0" max="<%= UsersFieldMove.max_progress %>" list="progress-marks">
+					<input type="range" name="users_field_move_progress[<%= users_field_move.id %>" class="skill-slider" value="<%= users_field_move.progress %>" min="0" max="<%= UsersFieldMove.max_progress %>" list="progress-marks">
 				</div>
 			</li>
 		<% end %>
