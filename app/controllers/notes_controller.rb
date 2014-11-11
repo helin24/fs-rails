@@ -20,9 +20,9 @@ class NotesController < ApplicationController
 	end
 
 	def update
-		@note = Note.find(params[:id])
-		@note.update(note_params)
-		render json: @note
+		note = Note.find(params[:id])
+		note.update(note_params)
+		render partial: "show", layout: false, locals: {note: note}
 	end
 
 	def destroy

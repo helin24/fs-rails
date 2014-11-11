@@ -58,27 +58,7 @@ $(document).ready(function() {
 	};
 
 	var updateNote = function($noteLi, response) {
-		var $noteText = $noteLi.find(".note-text");
-		updateNoteText($noteText, response);
-		showNoteText($noteText);
-
-		var $noteEdit = $noteLi.find(".note-text-edit");
-		updateNoteEdit($noteEdit, response);
-		hideNoteEdit($noteEdit.parent());
-	};
-
-	var updateNoteText = function($noteText, info) {
-		$noteText.html(info.text);
-	};
-
-	var updateNoteEdit = function($noteEdit, info) {
-		$inputText = $noteEdit.find("#note_text");
-		$inputSource = $noteEdit.find("#note_source");
-		$inputPublic = $noteEdit.find("#note_public");
-
-		$inputText.attr("value", info.text);
-		$inputSource.attr("value", info.source);
-		$inputPublic.attr("value", info.public);
+		$noteLi.html(response)
 	};
 
 	var addNote = function(noteHtml) {
