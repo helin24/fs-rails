@@ -7,5 +7,13 @@ class RoutinesController < ApplicationController
 	end
 
 	def create
+		@routine = Routine.create(routine_params)
+		render partial: "form", layout: false, locals: {routine: @routine}
 	end
+
+	private
+
+		def routine_params
+			params.require(:routine).permit(:name, :description, :author_id, :user_id, :length)
+		end
 end

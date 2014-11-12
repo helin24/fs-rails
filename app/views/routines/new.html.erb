@@ -24,11 +24,7 @@
 			</div><!--
 			--><div id="routine-space">
 				<div id="routine-info">
-					<%= form_for @routine do |f| %>
-						<%= f.text_field :name, placeholder: "Title" %>
-						<%= f.submit "Save" %>
-						<%= f.text_area :description, placeholder: "Description" %>
-					<% end %>
+					<%= render partial: "routines/form", locals: {routine: @routine} %>
 				</div><div id="routine-box">
 					<ul id="routine-elements">
 						<% (@routine.length / 5).times do |i| %>

@@ -92,11 +92,14 @@
 		display: block;
 		height: 10%;
 	}
-	form#new_routine {
-		#routine_name {
+	form#new_routine, form.edit_routine {
+		input {
 			padding: 8px;
-			width: 70%;
+			width: 65%;
 			box-sizing: border-box;
+		}
+		#routine_length {
+			width: 15%;
 		}
 		#routine_description {
 			display: block;
@@ -104,6 +107,7 @@
 			box-sizing: border-box;
 		}
 		input[type="submit"] {
+			width: 15%;
 			display: inline-block;
 			font-size: 20px;
 			height: 34px;
