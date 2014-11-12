@@ -1,0 +1,18 @@
+<%= render partial: "static_pages/nav", locals: {user: @user, active: "routines"} %>
+
+<div id="content">
+	<div id="routines">
+		<h2>Routines</h2>	
+		<ul id="routines-list">
+			<% @routines.each do |routine| %>
+			<li class="routine-info">
+				<div class="routine-name">
+					<%= link_to "#{routine.name}", routine_path(routine) %>
+				</div>
+			</li>
+			<% end %>
+		</ul>
+
+		<%= link_to "Add Routine", new_routine_path %>
+	</div>
+</div>

@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
 	has_many :users_field_moves
 	has_many :field_moves, through: :users_field_moves
 
+	has_many :routines
+
 	before_create :create_remember_token
 	has_secure_password
 

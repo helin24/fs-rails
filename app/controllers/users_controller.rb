@@ -30,6 +30,11 @@ class UsersController < ApplicationController
 		@users_test_levels = @user.users_test_levels.order(:id)
 	end
 
+	def routines
+		@user = User.find(params[:id])
+		@routines = @user.routines
+	end
+
 	def edit
 		@user = User.find(params[:id])
 		if @user == current_user

@@ -1,0 +1,23 @@
+<%= render partial: "static_pages/nav", locals: {user: @user, routine: @routine, active: "new_routine"} %>
+
+<div id="content" class="routine">
+	<div id="levels">
+		<ul id="level-list">
+				<li class="level-item active-level">Test Active</active>
+			<% @all_levels.each do |level| %>
+				<li class="level-item"><%= level.name %></li>
+			<% end %>
+		</ul>
+	</div><!--
+	--><div id="elements">
+		<ul id="element-list">
+			<% @all_elements.each do |element| %>
+				<li class="element-item <%= element.group.class %> <%= element.group.id %>"><%= element.name %></li>
+			<% end %>
+			<li id="custom-element">Add Your Own</li>
+		</ul>
+	</div><!--
+	--><div id="routine-box">
+	some stuff
+	</div>
+</div>
