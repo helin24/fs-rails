@@ -5,9 +5,6 @@ class DiagramSelector
 	attr_reader :pic
 
 	def initialize(file)
-		# could pass it a specific pdf page
-		# or the entire pdf document and relevant pages
-		# or a list of files
 		@pic = ImageList.new(file)[0]
 	end
 
@@ -22,11 +19,6 @@ class DiagramSelector
 			end
 		end
 		colors
-		# look through every pixel
-		# create hash that will include color=> frequency
-		# for each pixel get color
-		# add to hash
-		# return hash
 	end
 
 	def crop_by_color(color, padding = 8)

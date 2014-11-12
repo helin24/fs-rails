@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141026144551) do
+ActiveRecord::Schema.define(version: 20141111164900) do
 
   create_table "coachings", force: true do |t|
     t.integer  "skater_id"
@@ -22,6 +22,18 @@ ActiveRecord::Schema.define(version: 20141026144551) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "elements", force: true do |t|
+    t.integer  "routine_id"
+    t.integer  "elementable_id"
+    t.string   "elementable_type"
+    t.time     "time"
+    t.integer  "repetitions"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "elements", ["routine_id"], name: "index_elements_on_routine_id"
 
   create_table "field_moves", force: true do |t|
     t.string   "name"
@@ -63,6 +75,19 @@ ActiveRecord::Schema.define(version: 20141026144551) do
 
   add_index "notes", ["author_id"], name: "index_notes_on_author_id"
   add_index "notes", ["user_id"], name: "index_notes_on_user_id"
+
+  create_table "routines", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "author_id"
+    t.integer  "length"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "routines", ["author_id"], name: "index_routines_on_author_id"
+  add_index "routines", ["user_id"], name: "index_routines_on_user_id"
 
   create_table "skills", force: true do |t|
     t.string   "name"

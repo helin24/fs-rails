@@ -5,15 +5,14 @@
 				<%= gravatar_for user %>
 			<% end %>
 		</li>
-	<% end %>
-	<% if users_levels ||= false %>
 		<li <%= "class=selected" if active == "users_levels" %>>
 			<%= link_to "ISI Progress", user_progress_path(user) %>
 		</li>
-	<% end %>
-	<% if users_test_levels ||= false %>
 		<li <%= "class=selected" if active == "users_test_levels" %>>
 			<%= link_to "Test Progress", user_test_progress_path(user) %>
+		</li>
+		<li <%= "class=selected" if active == "routines" %>>
+			<%= link_to "Routines", user_routines_path(user) %>
 		</li>
 	<% end %>	
 	<% if users_level ||= false %>
@@ -34,6 +33,11 @@
 	<% if users_field_move ||= false %>
 		<li <%= "class=selected" if active == "users_field_move" %>>
 			<%= link_to users_field_move.field_move.name, users_field_move_path(users_field_move) %>
+		</li>
+	<% end %>
+	<% if routine ||= false %>
+		<li <%= "class=selected" if active == "new_routine" %>>
+			<%= link_to "New Routine", new_routine_path %>
 		</li>
 	<% end %>
 </ul>

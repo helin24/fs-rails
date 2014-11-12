@@ -1,0 +1,38 @@
+<%= render partial: "static_pages/nav", locals: {user: @user, routine: @routine, active: "new_routine"} %>
+
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+<div id="content">
+	<div class="routine">
+		<div id="groups">
+			<ul id="group-list">
+				<% @all_groups.each do |group| %>
+					<li id="<%= group.class %>-<%= group.id %>" class="group-item"><%= group.name %></li>
+				<% end %>
+			</ul>
+		</div><!--
+		--><div id="to-align-vertically">
+			<div id="elements">
+				<ul id="element-list">
+					<% @all_elements.each do |element| %>
+						<li class="element-item draggable <%= element.group.class %> <%= element.group.id %>"><%= element.name %></li>
+					<% end %>
+					<li id="custom-element" class="element-item draggable">Add Your Own</li>
+				</ul>
+			</div><!--
+			--><div id="spacer">
+			</div><!--
+			--><div id="routine-space">
+				<div id="routine-info">
+					<%= render partial: "routines/form", locals: {routine: @routine} %>
+				</div><div id="routine-box">
+					<ul id="routine-elements">
+						<% (@routine.length / 5).times do |i| %>
+							<li class="time-mark" id="<%= i * 5 %>">-----</li>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
