@@ -1,5 +1,7 @@
 <%= render partial: "static_pages/nav", locals: {user: @user, routine: @routine, active: "new_routine"} %>
 
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
 <div id="content">
 	<div class="routine">
 		<div id="levels">
@@ -10,18 +12,28 @@
 				<% end %>
 			</ul>
 		</div><!--
-		--><div id="elements">
-			<ul id="element-list">
-				<% @all_elements.each do |element| %>
-					<li class="element-item <%= element.group.class %> <%= element.group.id %>"><%= element.name %></li>
-				<% end %>
-				<li id="custom-element" class="element-item">Add Your Own</li>
-			</ul>
-		</div><!--
-		--><div id="spacer">
-		</div><!--
-		--><div id="routine-box">
-		some stuff
+		--><div id="to-align-vertically">
+			<div id="elements">
+				<ul id="element-list">
+					<% @all_elements.each do |element| %>
+						<li class="element-item draggable <%= element.group.class %> <%= element.group.id %>"><%= element.name %></li>
+					<% end %>
+					<li id="custom-element" class="element-item">Add Your Own</li>
+				</ul>
+			</div><!--
+			--><div id="spacer">
+			</div><!--
+			--><div id="routine-space">
+				<div id="routine-info">
+					<%= form_for @routine do |f| %>
+						<%= f.text_field :name, placeholder: "Title" %>
+						<%= f.submit "Save" %>
+						<%= f.text_area :description, placeholder: "Description" %>
+					<% end %>
+				</div><div id="routine-box">
+					actual space
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
