@@ -4,11 +4,10 @@
 
 <div id="content">
 	<div class="routine">
-		<div id="levels">
-			<ul id="level-list">
-					<li class="level-item active-level">Test Active</active>
-				<% @all_levels.each do |level| %>
-					<li class="level-item"><%= level.name %></li>
+		<div id="groups">
+			<ul id="group-list">
+				<% @all_groups.each do |group| %>
+					<li id="<%= group.class %>-<%= group.id %>" class="group-item"><%= group.name %></li>
 				<% end %>
 			</ul>
 		</div><!--

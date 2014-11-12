@@ -8,7 +8,7 @@
 		display: table-cell;
 		/*border: 1px solid $black-color;*/
 		}
-	#levels{
+	#groups{
 		width: 20%;
 		vertical-align: top;
 	}
@@ -18,7 +18,7 @@
 	#elements{
 		display: inline-block;
 		min-height: 800px;
-		height: 838px;
+		height: 810px;
 		overflow: auto;
 		width: 25%;
 		vertical-align: top;
@@ -36,7 +36,7 @@
 		list-style-type: none;
 		margin: 0;
 	}
-	#level-list{
+	#group-list{
 		padding: 0;
 	}
 	#element-list{
@@ -48,17 +48,17 @@
 		border-radius: 8px;
 		text-align: center;
 	}
-	.level-item{
+	.group-item{
 		margin-top: 4px;
 		border-top-right-radius: 0;
 		border-bottom-right-radius: 0;
 		font-weight: bold;
 		background-color: $light-color;
 	}
-	.level-item:first-child{
+	.group-item:first-child{
 		margin-top: 0;
 	}
-	.active-level{
+	.active-group{
 		background-color: $primary-color;
 		border: 1px solid $primary-color;
 		border-right: none;
@@ -68,6 +68,10 @@
 		margin: 4px;
 		background-color: white;
 		border: 1px solid $primary-color;
+		display: none;
+	}
+	.active-element {
+		display: block;
 	}
 
 	#routine-space{
@@ -92,6 +96,7 @@
 		#routine_description {
 			display: block;
 			width: 100%;
+			box-sizing: border-box;
 		}
 		input[type="submit"] {
 			display: inline-block;
@@ -103,10 +108,12 @@
 		}
 	}
 	#routine-box {
+		box-sizing: border-box;
+		margin-top: 2%;
 		border: 2px solid $primary-color;
 		border-radius: 8px;
 		background-color: $primary-color;
-		height: 90%;
+		height: 88%;
 	}
 
 
