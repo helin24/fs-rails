@@ -19,6 +19,7 @@ $(function() {
 		deselectAll();
 		$(".group-item#" + activeGroup + "-" + activeId).addClass("active-group");
 		$(".element-item." + activeGroup + "." + activeId).addClass("active-element");
+		$("#custom-element").addClass("active-element")
 	}
 
 	var updateGroup = function(listItem) {
@@ -29,7 +30,14 @@ $(function() {
 	}
 
 	setInitialGroup();
-  $(".draggable").draggable();
 
+  $(".draggable").draggable({scroll: false, appendTo: ".routine", helper: "clone"});
+  $(".time-mark").droppable({
+  	activeClass: "dragged",
+  	drop: function(event, ui) {
+  		debugger;
+  		$(this).after(ui.draggable);
+  	}
+  })
 
 });

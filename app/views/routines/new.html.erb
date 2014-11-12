@@ -17,7 +17,7 @@
 					<% @all_elements.each do |element| %>
 						<li class="element-item draggable <%= element.group.class %> <%= element.group.id %>"><%= element.name %></li>
 					<% end %>
-					<li id="custom-element" class="element-item">Add Your Own</li>
+					<li id="custom-element" class="element-item draggable">Add Your Own</li>
 				</ul>
 			</div><!--
 			--><div id="spacer">
@@ -30,7 +30,11 @@
 						<%= f.text_area :description, placeholder: "Description" %>
 					<% end %>
 				</div><div id="routine-box">
-					actual space
+					<ul id="routine-elements">
+						<% (@routine.length / 5).times do |i| %>
+							<li class="time-mark" id="<%= i * 5 %>">-----</li>
+						<% end %>
+					</ul>
 				</div>
 			</div>
 		</div>

@@ -73,6 +73,11 @@
 	.active-element {
 		display: block;
 	}
+	#custom-element {
+		display: block;
+		background-color: $medium-color;
+		color: white;
+	}
 
 	#routine-space{
 		display: inline-block;
