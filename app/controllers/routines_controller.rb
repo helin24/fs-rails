@@ -21,13 +21,15 @@ class RoutinesController < ApplicationController
 	end
 
 	def update
-		@routine = Routine.update(routine_params)
+		id = routine_params[:id]
+		@routine = Routine.find(id)
+		@routine.update(routine_params)
 		render partial: "form", layout: false, locals: {routine: @routine}
 	end
 
 	private
 
 		def routine_params
-			params.require(:routine).permit(:name, :description, :author_id, :user_id, :length)
+			params.require(:routine).permit(:name, :description, :author_id, :user_id, :length, :id)
 		end
 end

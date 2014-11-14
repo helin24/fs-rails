@@ -40,7 +40,7 @@ $(function() {
   	}
   });
 
-  // Creating a new routine
+  // Creating and editing a routine
 
   $(".new_routine").on("submit", function() {
   	event.preventDefault();
@@ -51,15 +51,22 @@ $(function() {
   	});
   });
 
-  $()
+  $("#routine-info").on("submit", ".edit_routine", function() {
+    event.preventDefault();
+    $.ajax({url: this.action, type: "put", data: $(this).serialize(), success: function(response) {
+      changeTitle($(response));
+      }
+    });
+  });
 
   var replaceForm = function(form) {
   	$("#routine-info").html(form);
   };
 
   var changeTitle = function(response) {
-  	var title = response.name;
-  	var id = response.id;
+    $response = $(response)
+  	var title = $response.children("#routine_name").attr("value");
+  	var id = $response.children("#routine_id").attr("value");
   	var link = "routines/" + id + "/edit";
   	var insertHtml = "<a href='" + link + "'>" + title + "</a>"
   	$("#nav-bar .selected").html(insertHtml);
