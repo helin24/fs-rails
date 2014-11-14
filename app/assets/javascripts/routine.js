@@ -43,7 +43,7 @@ $(function() {
         $item = ui.draggable;
       }
       $(this).append($item);
-      $item.css({position: 'relative', top: 0, left: 0})
+      positionItem($item, $(this), ui);
     }
   });
 
@@ -52,6 +52,13 @@ $(function() {
     $item.addClass("routine-item");
     $item.draggable({scroll: false});
   };
+
+  var positionItem = function($item, $box, ui) {
+    debugger;
+    var itemPos = ui.offset;
+    var boxPos = $box.offset();
+    $item.css({position: 'relative', top: itemPos.top - boxPos.top, left: itemPos.left - boxPos.left})  
+  }
 
   // Creating and editing a routine
 
