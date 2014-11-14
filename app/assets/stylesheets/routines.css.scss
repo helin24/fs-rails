@@ -26,6 +26,9 @@
 		border: 2px solid $primary-color;
 		border-top-right-radius: 8px;
 		border-bottom-right-radius: 8px;
+		.delete-element {
+			display: none;
+		}
 	}
 	#spacer {
 		display: inline-block;
@@ -54,11 +57,12 @@
 		border-bottom-right-radius: 0;
 		font-weight: bold;
 		background-color: $light-color;
+		cursor: pointer;
 	}
 	.group-item:first-child{
 		margin-top: 0;
 	}
-	.active-group{
+	.active-group, .group-item:hover {
 		background-color: $primary-color;
 		border: 1px solid $primary-color;
 		border-right: none;
@@ -69,6 +73,7 @@
 		background-color: white;
 		border: 1px solid $primary-color;
 		display: none;
+		cursor: move;
 	}
 	.active-element {
 		display: block;
@@ -124,6 +129,9 @@
 		background-color: $primary-color;
 		height: 88%;
 		position: relative;
+		.delete-element {
+			cursor: pointer;
+		}
 	}
 	.routine-item {
 		display: inline-block;

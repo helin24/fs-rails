@@ -31,6 +31,8 @@ $(function() {
 
 	setInitialGroup();
 
+  // Draggable and droppable stuff
+
   $(".element-item").draggable({scroll: false, appendTo: ".routine", helper: "clone"});
 
   $("#routine-box").droppable({
@@ -45,6 +47,10 @@ $(function() {
       $(this).append($item);
       positionItem($item, $(this), ui);
     }
+  });
+
+  $("#routine-box").on("click", ".delete-element", function() {
+    $(this).parent().remove();
   });
 
   var makeItemDraggable = function($item) {
@@ -100,3 +106,9 @@ $(function() {
   };
 
 });
+
+
+// Need a class called Element that's created
+// Element should have properties top, left
+// Element should eventually have ID
+// 
