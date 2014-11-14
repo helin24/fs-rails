@@ -36,8 +36,14 @@
 		</li>
 	<% end %>
 	<% if routine ||= false %>
-		<li <%= "class=selected" if active == "new_routine" %>>
-			<%= link_to "New Routine", new_routine_path %>
-		</li>
+		<% if routine.created_at? %>
+			<li <%= "class=selected" if active == "new_routine" %>>
+				<%= routine.name %>
+			</li>
+		<% else %>
+			<li <%= "class=selected" if active == "new_routine" %>>
+				<%= link_to "New Routine", new_routine_path %>
+			</li>
+		<% end %>
 	<% end %>
 </ul>
