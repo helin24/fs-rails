@@ -50,13 +50,21 @@ $(function() {
   var makeItemDraggable = function($item) {
     $item.removeClass("element-item");
     $item.addClass("routine-item");
-    $item.draggable({scroll: false});
+    $item.draggable({scroll: false, containment: "parent"});
   };
 
   var positionItem = function($item, $box, ui) {
     debugger;
     var itemPos = ui.offset;
     var boxPos = $box.offset();
+    var top = itemPos.top - boxPos.top;
+    var left = itemPos.left - boxPos.left;
+    var boxHeight = $box.height();
+    var boxWidth = $box.width();
+    top = Math.max(0, top);
+    top = Math.min(top, boxHeight);
+    left = Math.max(0, left);
+    left = Math.min(left, boxWidth);
     $item.css({position: 'relative', top: itemPos.top - boxPos.top, left: itemPos.left - boxPos.left})  
   }
 
