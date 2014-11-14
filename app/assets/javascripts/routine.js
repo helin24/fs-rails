@@ -31,14 +31,27 @@ $(function() {
 
 	setInitialGroup();
 
-  $(".draggable").draggable({scroll: false, appendTo: ".routine", helper: "clone"});
+  $(".element-item").draggable({scroll: false, appendTo: ".routine", helper: "clone"});
 
-  $(".time-mark").droppable({
+  $("#routine-box").droppable({
   	activeClass: "dragged",
   	drop: function(event, ui) {
-  		$(this).after(ui.draggable);
-  	}
+      if(ui.draggable.hasClass("element-item")) {
+        $item = ui.draggable.clone();
+        makeItemDraggable($item);
+      } else {
+        $item = ui.draggable;
+      }
+      $(this).append($item);
+      $item.css({position: 'relative', top: 0, left: 0})
+    }
   });
+
+  var makeItemDraggable = function($item) {
+    $item.removeClass("element-item");
+    $item.addClass("routine-item");
+    $item.draggable({scroll: false});
+  };
 
   // Creating and editing a routine
 

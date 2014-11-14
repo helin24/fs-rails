@@ -64,7 +64,7 @@
 		border-right: none;
 		color: white;
 	}
-	.element-item{
+	.element-item, .routine-item {
 		margin: 4px;
 		background-color: white;
 		border: 1px solid $primary-color;
@@ -124,6 +124,8 @@
 		background-color: $primary-color;
 		height: 88%;
 	}
-
+	.routine-item {
+		display: inline-block;
+	}
 
 }

@@ -13,7 +13,7 @@
 			<div id="elements">
 				<ul id="element-list">
 					<% @all_elements.each do |element| %>
-						<li class="element-item draggable <%= element.group.class %> <%= element.group.id %>"><%= element.name %></li>
+						<li class="element-item <%= element.group.class %> <%= element.group.id %>"><%= element.name %></li>
 					<% end %>
 					<li id="custom-element" class="element-item draggable">Add Your Own</li>
 				</ul>
@@ -24,11 +24,11 @@
 				<div id="routine-info">
 					<%= render partial: "routines/form", locals: {routine: @routine} %>
 				</div><div id="routine-box">
-					<ul id="routine-elements">
+					<!-- <ul id="routine-elements"> -->
 						<% (@routine.length / 5).times do |i| %>
-							<li class="time-mark" id="<%= i * 5 %>">-----</li>
+							<!-- <li class="time-mark" id="<%= i * 5 %>">-----</li> -->
 						<% end %>
-					</ul>
+					<!-- </ul> -->
 				</div>
 			</div>
 		</div>
