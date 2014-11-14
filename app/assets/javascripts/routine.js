@@ -54,7 +54,6 @@ $(function() {
   };
 
   var positionItem = function($item, $box, ui) {
-    debugger;
     var itemPos = ui.offset;
     var boxPos = $box.offset();
     var top = itemPos.top - boxPos.top;
@@ -65,7 +64,7 @@ $(function() {
     top = Math.min(top, boxHeight);
     left = Math.max(0, left);
     left = Math.min(left, boxWidth);
-    $item.css({position: 'relative', top: itemPos.top - boxPos.top, left: itemPos.left - boxPos.left})  
+    $item.css({position: 'absolute', top: top, left: left})  
   }
 
   // Creating and editing a routine

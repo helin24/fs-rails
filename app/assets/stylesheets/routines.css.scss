@@ -123,10 +123,11 @@
 		border-radius: 8px;
 		background-color: $primary-color;
 		height: 88%;
+		position: relative;
 	}
 	.routine-item {
 		display: inline-block;
-		/*position: relative;*/
+		float: left;
 	}
 
 }
