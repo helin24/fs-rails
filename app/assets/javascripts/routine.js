@@ -44,26 +44,25 @@ $(function() {
 
   $(".new_routine").on("submit", function() {
   	event.preventDefault();
-  	debugger;
-  	// var id = $(this).find("#routine_id").attr("value");
-  	// if(id===undefined) 
-
-  	// If event does not exist
   	$.ajax({url: this.action, type: "post", data: $(this).serialize(), success: function(response) {
-  		debugger;
   		replaceForm(response);
-  		changeTitle(response.name)
+  		changeTitle(response)
   		}
   	});
-  	// else edit?
   });
+
+  $()
 
   var replaceForm = function(form) {
   	$("#routine-info").html(form);
   };
 
-  var changeTitle = function(title) {
-
+  var changeTitle = function(response) {
+  	var title = response.name;
+  	var id = response.id;
+  	var link = "routines/" + id + "/edit";
+  	var insertHtml = "<a href='" + link + "'>" + title + "</a>"
+  	$("#nav-bar .selected").html(insertHtml);
   };
 
 });
