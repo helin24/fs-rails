@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141111164900) do
+ActiveRecord::Schema.define(version: 20141114230833) do
 
   create_table "coachings", force: true do |t|
     t.integer  "skater_id"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20141111164900) do
     t.integer  "repetitions"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "top"
+    t.float    "left"
   end
 
   add_index "elements", ["routine_id"], name: "index_elements_on_routine_id"

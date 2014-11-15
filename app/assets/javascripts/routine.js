@@ -31,16 +31,49 @@ $(function() {
 
 	setInitialGroup();
 
-  $(".draggable").draggable({scroll: false, appendTo: ".routine", helper: "clone"});
+  // Draggable and droppable stuff
 
-  $(".time-mark").droppable({
+  $(".element-item").draggable({scroll: false, appendTo: ".routine", helper: "clone"});
+
+  $("#routine-box").droppable({
   	activeClass: "dragged",
   	drop: function(event, ui) {
-  		$(this).after(ui.draggable);
-  	}
+      if(ui.draggable.hasClass("element-item")) {
+        $item = ui.draggable.clone();
+        makeItemDraggable($item);
+      } else {
+        $item = ui.draggable;
+      }
+      $(this).append($item);
+      positionItem($item, $(this), ui);
+    }
   });
 
-  // Creating a new routine
+  $("#routine-box").on("click", ".delete-element", function() {
+    $(this).parent().remove();
+  });
+
+  var makeItemDraggable = function($item) {
+    $item.removeClass("element-item");
+    $item.addClass("routine-item");
+    $item.draggable({scroll: false, containment: "parent"});
+  };
+
+  var positionItem = function($item, $box, ui) {
+    var itemPos = ui.offset;
+    var boxPos = $box.offset();
+    var top = itemPos.top - boxPos.top;
+    var left = itemPos.left - boxPos.left;
+    var boxHeight = $box.height();
+    var boxWidth = $box.width();
+    top = Math.max(0, top);
+    top = Math.min(top, boxHeight);
+    left = Math.max(0, left);
+    left = Math.min(left, boxWidth);
+    $item.css({position: 'absolute', top: top, left: left})  
+  }
+
+  // Creating and editing a routine
 
   $(".new_routine").on("submit", function() {
   	event.preventDefault();
@@ -51,18 +84,40 @@ $(function() {
   	});
   });
 
-  $()
+  $("#routine-info").on("submit", ".edit_routine", function() {
+    event.preventDefault();
+    $.ajax({url: this.action, type: "put", data: $(this).serialize(), success: function(response) {
+      changeTitle($(response));
+      }
+    });
+  });
 
   var replaceForm = function(form) {
   	$("#routine-info").html(form);
   };
 
   var changeTitle = function(response) {
-  	var title = response.name;
-  	var id = response.id;
+    $response = $(response)
+  	var title = $response.children("#routine_name").attr("value");
+  	var id = $response.children("#routine_id").attr("value");
   	var link = "routines/" + id + "/edit";
   	var insertHtml = "<a href='" + link + "'>" + title + "</a>"
   	$("#nav-bar .selected").html(insertHtml);
   };
 
 });
+
+// Need a class called Element that's created
+// Element should have properties top, left
+// Element should eventually have ID
+// 
+
+var Routine = function() {
+  
+}
+
+var Element = function($listItem) {
+  this.id = $listItem.attr("id");
+  this.top = $listItem.attr("top");
+  this.left = $listItem.attr("left");
+}
