@@ -107,8 +107,17 @@ $(function() {
 
 });
 
-
 // Need a class called Element that's created
 // Element should have properties top, left
 // Element should eventually have ID
 // 
+
+var Routine = function() {
+  
+}
+
+var Element = function($listItem) {
+  this.id = $listItem.attr("id");
+  this.top = $listItem.attr("top");
+  this.left = $listItem.attr("left");
+}
