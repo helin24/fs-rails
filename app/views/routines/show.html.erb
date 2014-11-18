@@ -13,7 +13,7 @@
 			<div id="elements">
 				<ul id="element-list">
 					<% @all_elements.each do |element| %>
-						<li class="element-item <%= element.group.class %> <%= element.group.id %>"><%= element.name %> 
+						<li class="element-item <%= element.group.class %> <%= element.group.id %>" type="<%= element.class %>" type-id="<%= element.id %>"><%= element.name %> 
 							<a class="delete-element">X</a>
 						</li>
 					<% end %>

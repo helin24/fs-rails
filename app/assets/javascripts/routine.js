@@ -29,7 +29,19 @@ $(function() {
 		selectGroup(activeGroup, activeId);
 	};
 
+  var loadRoutine = function() {
+    var routine = new Routine();
+    var elements = $("#routine-box").find("li")
+    for(i = 0; i < elements.length; i++) {
+      var $listItem = $(elements[0])
+      var element = new Element($listItem);
+      routine.elements.push(element);
+    }
+    return routine;
+  }
+
 	setInitialGroup();
+  var routine = loadRoutine();
 
   // Draggable and droppable stuff
 
@@ -70,16 +82,24 @@ $(function() {
     top = Math.min(top, boxHeight);
     left = Math.max(0, left);
     left = Math.min(left, boxWidth);
-    $item.css({position: 'absolute', top: top, left: left})  
+    $item.css({position: 'absolute', top: top, left: left})
+    $item[0].setAttribute("top", top)
+    $item[0].setAttribute("left", left)
   }
 
   // Creating and editing a routine
 
+  var elementsToJson = function() {
+    // routine.elements.to_json
+  }
+
   $(".new_routine").on("submit", function() {
   	event.preventDefault();
-  	$.ajax({url: this.action, type: "post", data: $(this).serialize(), success: function(response) {
+    var routineData = $(this).serialize();
+    routineData = routineData + '&routine_elements=' + JSON.stringify(loadRoutine());
+  	$.ajax({url: this.action, type: "post", data: routineData, success: function(response) {
   		replaceForm(response);
-  		changeTitle(response)
+  		changeTitle(response);
   		}
   	});
   });
@@ -113,11 +133,13 @@ $(function() {
 // 
 
 var Routine = function() {
-  
+  this.elements = []
 }
 
 var Element = function($listItem) {
   this.id = $listItem.attr("id");
   this.top = $listItem.attr("top");
   this.left = $listItem.attr("left");
+  this.elementable_type = $listItem.attr("type")
+  this.elementable_id = $listItem.attr("type-id")
 }
