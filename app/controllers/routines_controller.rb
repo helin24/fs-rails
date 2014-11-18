@@ -5,10 +5,16 @@ class RoutinesController < ApplicationController
 		puts "routine id is #{@routine.id}"
 		@all_groups = Level.all + TestLevel.all
 		@all_elements = Skill.all + FieldMove.all
+		render 'show'
 	end
 
 	def create
 		@routine = Routine.create(routine_params)
+		elements = JSON.parse(params["routine_elements"])["elements"]
+		elements.each do |elem|
+			Element.create(elementable_type: elem["elementable_type"], elementable_id: elem["elementable_id"], routine_id: @routine.id, top: elem["top"], left: elem["left"])
+		end
+		# puts "elements are #{elements}"
 		render partial: "form", layout: false, locals: {routine: @routine}
 	end
 
@@ -17,7 +23,7 @@ class RoutinesController < ApplicationController
 		@routine = Routine.find(params[:id])
 		@all_groups = Level.all + TestLevel.all
 		@all_elements = Skill.all + FieldMove.all
-		render "new"
+		render "show"
 	end
 
 	def update
