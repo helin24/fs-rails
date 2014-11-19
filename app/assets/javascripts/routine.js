@@ -90,10 +90,6 @@ $(function() {
 
   // Creating and editing a routine
 
-  var elementsToJson = function() {
-    // routine.elements.to_json
-  }
-
   $(".new_routine").on("submit", function() {
   	event.preventDefault();
     var routineData = $(this).serialize();
@@ -115,6 +111,15 @@ $(function() {
     });
   });
 
+  $("#routine-box").on("click", "#custom-element", function() {
+    $(this).find("#add-custom-text").css({display: "none"});
+    $(this).find(".custom-input").css({display: "inline"});
+  });
+
+  $("#routine-box").on("focusOut", "#custom-element", function() {
+    debugger;
+  });
+
   var replaceForm = function(form) {
   	$("#routine-info").html(form);
   };
@@ -127,7 +132,6 @@ $(function() {
   	var insertHtml = "<a href='" + link + "'>" + title + "</a>"
   	$("#nav-bar .selected").html(insertHtml);
   };
-
 });
 
 var Routine = function() {
@@ -138,6 +142,10 @@ var Element = function($listItem) {
   this.id = $listItem.attr("element-id");
   this.top = $listItem.attr("top");
   this.left = $listItem.attr("left");
-  this.elementable_type = $listItem.attr("type")
-  this.elementable_id = $listItem.attr("type-id")
+  this.elementable_type = $listItem.attr("type");
+  this.elementable_id = $listItem.attr("type-id");
+  debugger;
+  if($listItem.attr("id") === "custom-element"){
+    this.custom_name = $listItem.find(".custom-input").attr("value");
+  }
 }
