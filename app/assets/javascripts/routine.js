@@ -33,7 +33,7 @@ $(function() {
     var routine = new Routine();
     var elements = $("#routine-box").find("li")
     for(i = 0; i < elements.length; i++) {
-      var $listItem = $(elements[0])
+      var $listItem = $(elements[i])
       var element = new Element($listItem);
       routine.elements.push(element);
     }
@@ -46,6 +46,7 @@ $(function() {
   // Draggable and droppable stuff
 
   $(".element-item").draggable({scroll: false, appendTo: ".routine", helper: "clone"});
+  $(".routine-item").draggable({scroll: false, containment: "parent"});
 
   $("#routine-box").droppable({
   	activeClass: "dragged",
@@ -106,7 +107,9 @@ $(function() {
 
   $("#routine-info").on("submit", ".edit_routine", function() {
     event.preventDefault();
-    $.ajax({url: this.action, type: "put", data: $(this).serialize(), success: function(response) {
+    var routineData = $(this).serialize();
+    routineData = routineData + '&routine_elements=' + JSON.stringify(loadRoutine());
+    $.ajax({url: this.action, type: "put", data: routineData, success: function(response) {
       changeTitle($(response));
       }
     });
@@ -127,17 +130,12 @@ $(function() {
 
 });
 
-// Need a class called Element that's created
-// Element should have properties top, left
-// Element should eventually have ID
-// 
-
 var Routine = function() {
   this.elements = []
 }
 
 var Element = function($listItem) {
-  this.id = $listItem.attr("id");
+  this.id = $listItem.attr("element-id");
   this.top = $listItem.attr("top");
   this.left = $listItem.attr("left");
   this.elementable_type = $listItem.attr("type")
