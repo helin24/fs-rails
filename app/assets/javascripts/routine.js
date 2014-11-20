@@ -63,7 +63,8 @@ $(function() {
   });
 
   $("#routine-box").on("click", ".delete-element", function() {
-    $(this).parent().remove();
+    $(this).parent().addClass("deleted");
+    $(this).parent().css({display: "none"});
   });
 
   var makeItemDraggable = function($item) {
@@ -160,5 +161,8 @@ var Element = function($listItem) {
   this.elementable_id = $listItem.attr("type-id");
   if($listItem.attr("id") === "custom-element"){
     this.custom_name = $listItem.find(".custom-input").attr("value");
+  };
+  if($listItem.hasClass("deleted")) {
+    this.deleted = true;
   }
 }
