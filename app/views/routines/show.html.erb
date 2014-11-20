@@ -17,7 +17,7 @@
 							<a class="delete-element">X</a>
 						</li>
 					<% end %>
-					<li id="custom-element" class="element-item draggable"><div id="custom-text">Add Your Own</div><input type="text" placeholder="Add Your Own" class="custom-input" style="display: none;"></li>
+					<li id="custom-element" class="element-item draggable"><div id="custom-text">Add Your Own</div><input type="text" placeholder="Add Your Own" class="custom-input" style="display: none;"> <a class="delete-element">X</a></li>
 				</ul>
 			</div><!--
 			--><div id="spacer">
@@ -29,7 +29,10 @@
 					<% if @routine_elements ||= false %>
 					<% @routine_elements.each do |element| %>
 						<% if element.custom_name != nil %>
-
+							<li id="custom-element" class="routine-item" element-id="<%= element.id %>"top="<%= element.top %>" left="<%= element.left %>" style="position:absolute; top:<%= element.top %>px; left:<%= element.left %>px;">
+								<div id="custom-text" style="display:inline;"><%= element.custom_name %></div>
+								<input type="text" placeholder="Add Your Own" value="<%= element.custom_name %>" class="custom-input" style="display: none;"> <a class="delete-element">X</a>
+							</li>
 						<% else %>
 							<% elem = element.elementable %>
 							<li class="routine-item <%= elem.group.class %> <%= elem.group.id %>" type="<%= elem.class %>" type-id="<%= elem.id %>" element-id="<%= element.id %>" style="position: absolute; top: <%= element.top %>px; left: <%= element.left %>px" top="<%= element.top %>" left="<%= element.left %>"><%= elem.name %> <a class="delete-element">X</a></li>

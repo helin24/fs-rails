@@ -34,9 +34,9 @@ class RoutinesController < ApplicationController
 		elements.each do |elem|
 			found_element = Element.find_by(id: elem["id"])
 			if found_element
-				found_element.update(elementable_type: elem["elementable_type"], elementable_id: elem["elementable_id"], routine_id: @routine.id, top: elem["top"], left: elem["left"])
+				found_element.update(custom_name: elem["custom_name"], elementable_type: elem["elementable_type"], elementable_id: elem["elementable_id"], routine_id: @routine.id, top: elem["top"], left: elem["left"])
 			else
-				Element.create(elementable_type: elem["elementable_type"], elementable_id: elem["elementable_id"], routine_id: @routine.id, top: elem["top"], left: elem["left"])
+				Element.create(custom_name: elem["custom_name"], elementable_type: elem["elementable_type"], elementable_id: elem["elementable_id"], routine_id: @routine.id, top: elem["top"], left: elem["left"])
 			end
 		end
 		render partial: "form", layout: false, locals: {routine: @routine}

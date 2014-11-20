@@ -145,7 +145,6 @@ $(function() {
     var $div = $customElem.find("#custom-text")
     $div.text(name);
     $div.css({display: "inline"});
-    debugger;
   };
 });
 
@@ -160,7 +159,6 @@ var Element = function($listItem) {
   this.elementable_type = $listItem.attr("type");
   this.elementable_id = $listItem.attr("type-id");
   if($listItem.attr("id") === "custom-element"){
-    debugger;
     this.custom_name = $listItem.find(".custom-input").attr("value");
   }
 }
