@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141114230833) do
+ActiveRecord::Schema.define(version: 20141119160443) do
 
   create_table "coachings", force: true do |t|
     t.integer  "skater_id"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20141114230833) do
     t.datetime "updated_at"
     t.float    "top"
     t.float    "left"
+    t.text     "custom_name"
   end
 
   add_index "elements", ["routine_id"], name: "index_elements_on_routine_id"

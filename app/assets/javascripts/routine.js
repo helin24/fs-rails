@@ -33,7 +33,7 @@ $(function() {
     var routine = new Routine();
     var elements = $("#routine-box").find("li")
     for(i = 0; i < elements.length; i++) {
-      var $listItem = $(elements[0])
+      var $listItem = $(elements[i])
       var element = new Element($listItem);
       routine.elements.push(element);
     }
@@ -46,6 +46,7 @@ $(function() {
   // Draggable and droppable stuff
 
   $(".element-item").draggable({scroll: false, appendTo: ".routine", helper: "clone"});
+  $(".routine-item").draggable({scroll: false, containment: "parent"});
 
   $("#routine-box").droppable({
   	activeClass: "dragged",
@@ -62,7 +63,8 @@ $(function() {
   });
 
   $("#routine-box").on("click", ".delete-element", function() {
-    $(this).parent().remove();
+    $(this).parent().addClass("deleted");
+    $(this).parent().css({display: "none"});
   });
 
   var makeItemDraggable = function($item) {
@@ -89,10 +91,6 @@ $(function() {
 
   // Creating and editing a routine
 
-  var elementsToJson = function() {
-    // routine.elements.to_json
-  }
-
   $(".new_routine").on("submit", function() {
   	event.preventDefault();
     var routineData = $(this).serialize();
@@ -106,40 +104,65 @@ $(function() {
 
   $("#routine-info").on("submit", ".edit_routine", function() {
     event.preventDefault();
-    $.ajax({url: this.action, type: "put", data: $(this).serialize(), success: function(response) {
+    var routineData = $(this).serialize();
+    routineData = routineData + '&routine_elements=' + JSON.stringify(loadRoutine());
+    $.ajax({url: this.action, type: "put", data: routineData, success: function(response) {
       changeTitle($(response));
       }
     });
   });
 
-  var replaceForm = function(form) {
-  	$("#routine-info").html(form);
+  $("#routine-box").on("click", "#custom-element", function() {
+    $(this).find("#custom-text").css({display: "none"});
+    $(this).find(".custom-input").css({display: "inline"});
+  });
+
+  $("#routine-box").on("focusout", "#custom-element", function() {
+    updateCustomInput($(this));
+    updateCustomText($(this));
+  });
+
+  replaceForm = function(form) {
+    $("#routine-info").html(form);
   };
 
   var changeTitle = function(response) {
     $response = $(response)
-  	var title = $response.children("#routine_name").attr("value");
-  	var id = $response.children("#routine_id").attr("value");
-  	var link = "routines/" + id + "/edit";
-  	var insertHtml = "<a href='" + link + "'>" + title + "</a>"
-  	$("#nav-bar .selected").html(insertHtml);
+    var title = $response.children("#routine_name").attr("value");
+    var id = $response.children("#routine_id").attr("value");
+    var link = "routines/" + id + "/edit";
+    var insertHtml = "<a href='" + link + "'>" + title + "</a>"
+    $("#nav-bar .selected").html(insertHtml);
   };
 
-});
+  var updateCustomInput = function($customElem) {
+    $input = $customElem.find(".custom-input");
+    $input.attr("value", $input.val());
+    $input.css({display: "none"});
+  };
 
-// Need a class called Element that's created
-// Element should have properties top, left
-// Element should eventually have ID
-// 
+  var updateCustomText = function($customElem) {
+    var name = $customElem.find(".custom-input").val();
+    var $div = $customElem.find("#custom-text")
+    $div.text(name);
+    $div.css({display: "inline"});
+  };
+});
 
 var Routine = function() {
   this.elements = []
 }
 
 var Element = function($listItem) {
-  this.id = $listItem.attr("id");
+  this.id = $listItem.attr("element-id");
   this.top = $listItem.attr("top");
   this.left = $listItem.attr("left");
-  this.elementable_type = $listItem.attr("type")
-  this.elementable_id = $listItem.attr("type-id")
+  this.elementable_type = $listItem.attr("type");
+  this.elementable_id = $listItem.attr("type-id");
+  if($listItem.attr("id") === "custom-element"){
+    this.custom_name = $listItem.find(".custom-input").attr("value");
+  };
+  if($listItem.hasClass("deleted")) {
+    this.deleted = true;
+  }
 }

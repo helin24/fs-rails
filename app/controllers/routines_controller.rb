@@ -14,7 +14,6 @@ class RoutinesController < ApplicationController
 		elements.each do |elem|
 			Element.create(elementable_type: elem["elementable_type"], elementable_id: elem["elementable_id"], routine_id: @routine.id, top: elem["top"], left: elem["left"])
 		end
-		# puts "elements are #{elements}"
 		render partial: "form", layout: false, locals: {routine: @routine}
 	end
 
@@ -23,13 +22,29 @@ class RoutinesController < ApplicationController
 		@routine = Routine.find(params[:id])
 		@all_groups = Level.all + TestLevel.all
 		@all_elements = Skill.all + FieldMove.all
+		@routine_elements = @routine.elements
 		render "show"
 	end
 
 	def update
 		id = routine_params[:id]
 		@routine = Routine.find(id)
-		@routine.update(routine_params)
+		@routine.update(routine_params)		
+		elements = JSON.parse(params["routine_elements"])["elements"]
+
+		elements.each do |elem|
+			found_element = Element.find_by(id: elem["id"])
+			if found_element
+				if elem["deleted"] == true
+					found_element.destroy
+				else
+					found_element.update(custom_name: elem["custom_name"], elementable_type: elem["elementable_type"], elementable_id: elem["elementable_id"], routine_id: @routine.id, top: elem["top"], left: elem["left"])
+				end
+			else
+				e = Element.create(custom_name: elem["custom_name"], elementable_type: elem["elementable_type"], elementable_id: elem["elementable_id"], routine_id: @routine.id, top: elem["top"], left: elem["left"])
+			end
+		end
+
 		render partial: "form", layout: false, locals: {routine: @routine}
 	end
 
