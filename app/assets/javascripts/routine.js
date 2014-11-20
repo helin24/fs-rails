@@ -112,25 +112,40 @@ $(function() {
   });
 
   $("#routine-box").on("click", "#custom-element", function() {
-    $(this).find("#add-custom-text").css({display: "none"});
+    $(this).find("#custom-text").css({display: "none"});
     $(this).find(".custom-input").css({display: "inline"});
   });
 
-  $("#routine-box").on("focusOut", "#custom-element", function() {
-    debugger;
+  $("#routine-box").on("focusout", "#custom-element", function() {
+    updateCustomInput($(this));
+    updateCustomText($(this));
   });
 
-  var replaceForm = function(form) {
-  	$("#routine-info").html(form);
+  replaceForm = function(form) {
+    $("#routine-info").html(form);
   };
 
   var changeTitle = function(response) {
     $response = $(response)
-  	var title = $response.children("#routine_name").attr("value");
-  	var id = $response.children("#routine_id").attr("value");
-  	var link = "routines/" + id + "/edit";
-  	var insertHtml = "<a href='" + link + "'>" + title + "</a>"
-  	$("#nav-bar .selected").html(insertHtml);
+    var title = $response.children("#routine_name").attr("value");
+    var id = $response.children("#routine_id").attr("value");
+    var link = "routines/" + id + "/edit";
+    var insertHtml = "<a href='" + link + "'>" + title + "</a>"
+    $("#nav-bar .selected").html(insertHtml);
+  };
+
+  var updateCustomInput = function($customElem) {
+    $input = $customElem.find(".custom-input");
+    $input.attr("value", $input.val());
+    $input.css({display: "none"});
+  };
+
+  var updateCustomText = function($customElem) {
+    var name = $customElem.find(".custom-input").val();
+    var $div = $customElem.find("#custom-text")
+    $div.text(name);
+    $div.css({display: "inline"});
+    debugger;
   };
 });
 
@@ -144,8 +159,8 @@ var Element = function($listItem) {
   this.left = $listItem.attr("left");
   this.elementable_type = $listItem.attr("type");
   this.elementable_id = $listItem.attr("type-id");
-  debugger;
   if($listItem.attr("id") === "custom-element"){
+    debugger;
     this.custom_name = $listItem.find(".custom-input").attr("value");
   }
 }
