@@ -95,19 +95,25 @@ $(function() {
   	event.preventDefault();
     var routineData = $(this).serialize();
     routineData = routineData + '&routine_elements=' + JSON.stringify(loadRoutine());
-  	$.ajax({url: this.action, type: "post", data: routineData, success: function(response) {
-  		replaceForm(response);
-  		changeTitle(response);
-  		}
-  	});
+    var $button = $(this).find("input[type='submit']");
+    $.ajax({url: this.action, type: "post", data: routineData, success: function(response) {
+      replaceForm(response);
+      changeTitle(response);
+      $button.css({"background-color": "#08A20C"});
+      debugger;
+      }
+    });
   });
 
   $("#routine-info").on("submit", ".edit_routine", function() {
     event.preventDefault();
+    var $button = $(this).find("input[type='submit']");
     var routineData = $(this).serialize();
     routineData = routineData + '&routine_elements=' + JSON.stringify(loadRoutine());
     $.ajax({url: this.action, type: "put", data: routineData, success: function(response) {
       changeTitle($(response));
+      $button.css({"background-color": "#08A20C"});
+      debugger;
       }
     });
   });
