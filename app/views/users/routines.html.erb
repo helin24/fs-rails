@@ -7,7 +7,7 @@
 			<% @routines.each do |routine| %>
 			<li class="routine-info">
 				<div class="routine-name">
-					<%= link_to "#{routine.name}", routine_path(routine) %>
+					<%= link_to "#{routine.name}", edit_routine_path(routine) %>
 				</div>
 			</li>
 			<% end %>

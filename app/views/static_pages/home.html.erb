@@ -1,6 +1,21 @@
 <div id="content">
-	<h1>Home Page</h1>
-	<p>In Progress Figure Skating Application</p>
-	<%= link_to "Log In", signin_path %>
-	<%= link_to "Create Account", new_user_path %>
+	<h2>Figure skate with intention!</h2>
+	<div>
+		<h3>Note the Details</h3>
+		<p>Record notes for individual skills and field moves and read suggestions and links posted by other skaters.</p>
+	</div><div>
+		<h3>Rate yourself regularly</h3>
+		<p>Move the slider up as you master skills and field moves.</p>
+	</div><div>
+		<h3>Track your progress</h3>
+		<p>Stay motivated with a chart showing your completion of each level.</p>
+		<!-- image_tag "level_progress.png"-->
+	</div><div>
+		<h3>Plan your practice routine</h3>
+		<p>Make a list of skills and field moves to practice, or start planning a program!</p>
+	</div>
+	<% if !current_user %>
+		<%= link_to "Log In", signin_path %>
+		<%= link_to "Create Account", new_user_path %>
+	<% end %>
 </div>
