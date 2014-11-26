@@ -12,6 +12,7 @@ class Note < ActiveRecord::Base
 			text_with_links.gsub!(link, "<a href='#{link}' target='_blank'>#{link}</a>")
 		end
 		text_with_links.gsub!(/<script(.)*\/script>/, "")
+		return "" if text_with_links == "()"
 		text_with_links
 	end
 end
