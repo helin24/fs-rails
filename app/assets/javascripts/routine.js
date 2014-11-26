@@ -99,6 +99,7 @@ $(function() {
     $.ajax({url: this.action, type: "post", data: routineData, success: function(response) {
       replaceForm(response);
       changeTitle(response);
+      $button = $("input[type='submit']");
       flashSavedButton($button);
       }
     });
