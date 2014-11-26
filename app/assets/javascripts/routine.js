@@ -92,15 +92,14 @@ $(function() {
   // Creating and editing a routine
 
   $(".new_routine").on("submit", function() {
-  	event.preventDefault();
+    event.preventDefault();
     var routineData = $(this).serialize();
     routineData = routineData + '&routine_elements=' + JSON.stringify(loadRoutine());
     var $button = $(this).find("input[type='submit']");
     $.ajax({url: this.action, type: "post", data: routineData, success: function(response) {
       replaceForm(response);
       changeTitle(response);
-      $button.css({"background-color": "#08A20C"});
-      debugger;
+      flashSavedButton($button);
       }
     });
   });
@@ -112,8 +111,7 @@ $(function() {
     routineData = routineData + '&routine_elements=' + JSON.stringify(loadRoutine());
     $.ajax({url: this.action, type: "put", data: routineData, success: function(response) {
       changeTitle($(response));
-      $button.css({"background-color": "#08A20C"});
-      debugger;
+      flashSavedButton($button);
       }
     });
   });
@@ -153,6 +151,24 @@ $(function() {
     $div.text(name);
     $div.css({display: "inline"});
   };
+
+  var flashSavedButton = function($button) {
+    var oldColor = $button.css("color");
+    var oldBackgroundColor = $button.css("background-color");
+    var oldBorderColor = $button.css("border-color");
+    $button.css({"color": "#000"});
+    $button.css({"background-color": "#08A20C"});
+    $button.css({"border-color": "#045106"});
+    $button.attr("value", "Saved!")
+    setTimeout(
+      function() {
+        $button.css("color", oldColor);
+        $button.css("background-color", oldBackgroundColor);
+        $button.css("border-color", oldBorderColor);
+        $button.attr("value", "Save")
+      }, 1200);
+  };
+
 });
 
 var Routine = function() {
