@@ -77,4 +77,6 @@ Rails.application.configure do
   config.assets.paths << Rails.root.join("app", "assets", "fonts")
   config.active_record.dump_schema_after_migration = false
   config.assets.precompile = ['*.css.erb']
+
+  RAILS_DEFAULT_LOGGER = Logger.new('log/production.log')
 end
