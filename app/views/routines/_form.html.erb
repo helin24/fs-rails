@@ -2,6 +2,7 @@
 	<%= f.text_field :name, placeholder: "Title" %>
 	<%= f.number_field :length, value: @routine.length %>
 	<%= f.submit "Save" %>
+	<%= button_to "Delete", {action: 'destroy', method: :delete, id: @routine.id} %>
 	<%= f.text_area :description, placeholder: "Description" %>
 	<%= f.hidden_field :author_id, value: current_user.id %>
 	<%= f.hidden_field :user_id, value: current_user.id %>
