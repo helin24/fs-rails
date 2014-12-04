@@ -105,6 +105,20 @@ $(function() {
     });
   });
 
+  $("input[value=Delete]").on("click", function() {
+    event.stopPropagation();
+    var certain = confirm("Are you sure you want to delete this routine?");
+    if (certain == true) {
+      var $form = $(this).closest("form");
+      var routineData = $form.serialize();
+      var path = $form.attr("action");
+      $.ajax({url: path, type: "delete", data: routineData, succes: function(response) {
+        debugger;
+        }
+      });
+    }
+  });
+
   $("#routine-info").on("submit", ".edit_routine", function() {
     event.preventDefault();
     var $button = $(this).find("input[type='submit']");

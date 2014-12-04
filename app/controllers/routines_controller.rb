@@ -48,6 +48,13 @@ class RoutinesController < ApplicationController
 		render partial: "form", layout: false, locals: {routine: @routine}
 	end
 
+	def destroy
+		puts params
+		id = params[:id]
+		Routine.find(id).destroy
+		redirect_to user_routines_path(current_user)
+	end
+
 	private
 
 		def routine_params
