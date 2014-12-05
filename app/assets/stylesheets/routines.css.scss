@@ -98,6 +98,16 @@
 		div {
 			display: block;
 		}
+		.edit_routine div {
+			width: 15%;
+			display: inline-block;
+			input[type="submit"] {
+				width: 100%;
+			}
+		}
+		textarea {
+			width: 100%;
+		}
 	}	
 	#routine-info {
 		display: block;
@@ -143,5 +153,4 @@
 		display: inline-block;
 		float: left;
 	}
-
 }
