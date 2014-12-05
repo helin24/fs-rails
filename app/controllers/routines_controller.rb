@@ -27,7 +27,7 @@ class RoutinesController < ApplicationController
 	end
 
 	def update
-		id = routine_params[:id]
+		id = params[:id]
 		@routine = Routine.find(id)
 		@routine.update(routine_params)		
 		elements = JSON.parse(params["routine_elements"])["elements"]
@@ -46,6 +46,13 @@ class RoutinesController < ApplicationController
 		end
 
 		render partial: "form", layout: false, locals: {routine: @routine}
+	end
+
+	def destroy
+		puts params
+		id = params[:id]
+		Routine.find(id).destroy
+		redirect_to user_routines_path(current_user)
 	end
 
 	private

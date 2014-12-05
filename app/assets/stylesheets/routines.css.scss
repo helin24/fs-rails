@@ -98,6 +98,17 @@
 		div {
 			display: block;
 		}
+		.edit_routine div {
+			width: 15%;
+			display: inline-block;
+			input[type="submit"] {
+				width: 100%;
+			}
+		}
+		textarea#routine_description {
+			margin-top: 4px;
+			width: 100%;
+		}
 	}	
 	#routine-info {
 		display: block;
@@ -106,11 +117,11 @@
 	form#new_routine, form.edit_routine {
 		input {
 			padding: 8px;
-			width: 65%;
+			width: 58%;
 			box-sizing: border-box;
 		}
 		#routine_length {
-			width: 15%;
+			width: 10%;
 		}
 		#routine_description {
 			display: block;
@@ -143,5 +154,4 @@
 		display: inline-block;
 		float: left;
 	}
-
 }

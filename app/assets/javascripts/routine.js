@@ -105,12 +105,27 @@ $(function() {
     });
   });
 
-  $("#routine-info").on("submit", ".edit_routine", function() {
+  // $("input[value=Delete]").on("click", function(event) {
+  //   event.stopImmediatePropagation();
+  //   var certain = confirm("Are you sure you want to delete this routine?");
+  //   if (certain == true) {
+  //     var $form = $(this).closest("form");
+  //     var routineData = $form.serialize();
+  //     var path = $form.attr("action");
+  //     debugger;
+  //     $.ajax({url: path, type: "delete", data: routineData, succes: function(response) {
+  //       }
+  //     });
+  //   }
+  // });
+
+  $("#routine-info").on("click", "input[value=Save]", function() {
     event.preventDefault();
-    var $button = $(this).find("input[type='submit']");
-    var routineData = $(this).serialize();
+    form = this.parentElement
+    var $button = $(form).find("input[type='submit']").first();
+    var routineData = $(form).serialize();
     routineData = routineData + '&routine_elements=' + JSON.stringify(loadRoutine());
-    $.ajax({url: this.action, type: "put", data: routineData, success: function(response) {
+    $.ajax({url: form.action, type: "put", data: routineData, success: function(response) {
       changeTitle($(response));
       flashSavedButton($button);
       }
