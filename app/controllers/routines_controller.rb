@@ -27,7 +27,7 @@ class RoutinesController < ApplicationController
 	end
 
 	def update
-		id = routine_params[:id]
+		id = params[:id]
 		@routine = Routine.find(id)
 		@routine.update(routine_params)		
 		elements = JSON.parse(params["routine_elements"])["elements"]
