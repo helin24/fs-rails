@@ -95,11 +95,11 @@ $(function() {
     event.preventDefault();
     var routineData = $(this).serialize();
     routineData = routineData + '&routine_elements=' + JSON.stringify(loadRoutine());
-    var $button = $(this).find("input[type='submit']");
+    var $button = $(this).find("input[type='submit']").first();
     $.ajax({url: this.action, type: "post", data: routineData, success: function(response) {
       replaceForm(response);
       changeTitle(response);
-      $button = $("input[type='submit']");
+      $button = $("input[type='submit']").first();
       flashSavedButton($button);
       }
     });
@@ -119,7 +119,7 @@ $(function() {
   //   }
   // });
 
-  $("#routine-info").on("click", "input[value=Save]", function() {
+  $("#routine-info").on("click", ".edit_routine input[value=Save]", function() {
     event.preventDefault();
     form = this.parentElement
     var $button = $(form).find("input[type='submit']").first();

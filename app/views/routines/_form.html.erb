@@ -2,7 +2,11 @@
 	<%= f.text_field :name, placeholder: "Title" %>
 	<%= f.number_field :length, value: @routine.length %>
 	<%= f.submit "Save" %>
-	<%= button_to "Delete", {action: 'destroy', id: @routine.id}, method: :delete %>
+	<% if @routine.id != nil %>
+		<%= button_to "Delete", {action: 'destroy', id: @routine.id}, method: :delete, data: {confirm: "Are you sure you want to delete this routine?"} %>
+	<% else %>
+		<%= link_to "Cancel", user_routines_path(current_user) %>
+	<% end %>
 	<%= f.text_area :description, placeholder: "Description" %>
 	<%= f.hidden_field :author_id, value: current_user.id %>
 	<%= f.hidden_field :user_id, value: current_user.id %>
