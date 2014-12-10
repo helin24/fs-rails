@@ -55,7 +55,7 @@
 /**
  * Correct `block` display not defined in IE 8/9.
  */
-/* line 23, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 23, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 article,
 aside,
 details,
@@ -74,7 +74,7 @@ summary {
 /**
  * Correct `inline-block` display not defined in IE 8/9.
  */
-/* line 33, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 33, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 audio,
 canvas,
 video {
@@ -85,7 +85,7 @@ video {
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-/* line 42, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 42, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -94,7 +94,7 @@ audio:not([controls]) {
 /**
  * Address styling not present in IE 8/9.
  */
-/* line 51, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 51, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 [hidden] {
   display: none;
 }
@@ -107,7 +107,7 @@ audio:not([controls]) {
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-/* line 65, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 65, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 html {
   font-family: sans-serif;
   /* 1 */
@@ -120,7 +120,7 @@ html {
 /**
  * Remove default margin.
  */
-/* line 75, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 75, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 body {
   margin: 0;
 }
@@ -131,7 +131,7 @@ body {
 /**
  * Address `outline` inconsistency between Chrome and other browsers.
  */
-/* line 87, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 87, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 a:focus {
   outline: thin dotted;
 }
@@ -139,7 +139,7 @@ a:focus {
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
-/* line 96, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 96, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 a:active,
 a:hover {
   outline: 0;
@@ -152,7 +152,7 @@ a:hover {
  * Address variable `h1` font-size and margin within `section` and `article`
  * contexts in Firefox 4+, Safari 5, and Chrome.
  */
-/* line 109, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 109, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
@@ -161,7 +161,7 @@ h1 {
 /**
  * Address styling not present in IE 8/9, Safari 5, and Chrome.
  */
-/* line 118, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 118, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -169,7 +169,7 @@ abbr[title] {
 /**
  * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
  */
-/* line 127, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 127, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 b,
 strong {
   font-weight: bold;
@@ -178,7 +178,7 @@ strong {
 /**
  * Address styling not present in Safari 5 and Chrome.
  */
-/* line 135, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 135, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 dfn {
   font-style: italic;
 }
@@ -186,7 +186,7 @@ dfn {
 /**
  * Address differences between Firefox and other browsers.
  */
-/* line 143, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 143, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 hr {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -196,7 +196,7 @@ hr {
 /**
  * Address styling not present in IE 8/9.
  */
-/* line 153, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 153, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 mark {
   background: #ff0;
   color: #000;
@@ -205,7 +205,7 @@ mark {
 /**
  * Correct font family set oddly in Safari 5 and Chrome.
  */
-/* line 165, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 165, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 code,
 kbd,
 pre,
@@ -217,7 +217,7 @@ samp {
 /**
  * Improve readability of pre-formatted text in all browsers.
  */
-/* line 174, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 174, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 pre {
   white-space: pre-wrap;
 }
@@ -225,7 +225,7 @@ pre {
 /**
  * Set consistent quote types.
  */
-/* line 182, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 182, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
@@ -233,7 +233,7 @@ q {
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-/* line 190, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 190, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 small {
   font-size: 80%;
 }
@@ -241,7 +241,7 @@ small {
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 199, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 199, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 sub,
 sup {
   font-size: 75%;
@@ -250,12 +250,12 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 206, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 206, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 210, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 210, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 sub {
   bottom: -0.25em;
 }
@@ -266,7 +266,7 @@ sub {
 /**
  * Remove border when inside `a` element in IE 8/9.
  */
-/* line 222, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 222, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 img {
   border: 0;
 }
@@ -274,7 +274,7 @@ img {
 /**
  * Correct overflow displayed oddly in IE 9.
  */
-/* line 230, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 230, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 svg:not(:root) {
   overflow: hidden;
 }
@@ -285,7 +285,7 @@ svg:not(:root) {
 /**
  * Address margin not present in IE 8/9 and Safari 5.
  */
-/* line 242, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 242, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 figure {
   margin: 0;
 }
@@ -296,7 +296,7 @@ figure {
 /**
  * Define consistent border, margin, and padding.
  */
-/* line 254, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 254, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -307,7 +307,7 @@ fieldset {
  * 1. Correct `color` not being inherited in IE 8/9.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
-/* line 265, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 265, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 legend {
   border: 0;
   /* 1 */
@@ -320,7 +320,7 @@ legend {
  * 2. Correct font size not being inherited in all browsers.
  * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
  */
-/* line 279, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 279, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 button,
 input,
 select,
@@ -337,7 +337,7 @@ textarea {
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-/* line 291, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 291, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 button,
 input {
   line-height: normal;
@@ -349,7 +349,7 @@ input {
  * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
  * Correct `select` style inheritance in Firefox 4+ and Opera.
  */
-/* line 303, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 303, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 button,
 select {
   text-transform: none;
@@ -362,7 +362,7 @@ select {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-/* line 318, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 318, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -376,7 +376,7 @@ input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
-/* line 328, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 328, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 button[disabled],
 html input[disabled] {
   cursor: default;
@@ -386,7 +386,7 @@ html input[disabled] {
  * 1. Address box sizing set to `content-box` in IE 8/9.
  * 2. Remove excess padding in IE 8/9.
  */
-/* line 338, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 338, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -400,7 +400,7 @@ input[type="radio"] {
  * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
  */
-/* line 349, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 349, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -414,7 +414,7 @@ input[type="search"] {
  * Remove inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
-/* line 362, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 362, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
@@ -423,7 +423,7 @@ input[type="search"]::-webkit-search-decoration {
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-/* line 371, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 371, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -434,7 +434,7 @@ input::-moz-focus-inner {
  * 1. Remove default vertical scrollbar in IE 8/9.
  * 2. Improve readability and alignment in all browsers.
  */
-/* line 381, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 381, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 textarea {
   overflow: auto;
   /* 1 */
@@ -448,7 +448,7 @@ textarea {
 /**
  * Remove most spacing between table cells.
  */
-/* line 394, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 394, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -460,18 +460,18 @@ table {
 /**
  * Remove default styling of progress bars by browser
  */
-/* line 408, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/normalize.css.scss */
+/* line 408, /root/fs-rails/app/assets/stylesheets/normalize.css.scss */
 progress {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
-/* line 3, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/notes.css.scss */
+/* line 3, /root/fs-rails/app/assets/stylesheets/notes.css.scss */
 form#new_note, form.edit_note {
   width: 600px;
   color: #53768c;
 }
-/* line 6, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/notes.css.scss */
+/* line 6, /root/fs-rails/app/assets/stylesheets/notes.css.scss */
 form#new_note input, form.edit_note input {
   padding: 4px;
   width: 100%;
@@ -479,7 +479,7 @@ form#new_note input, form.edit_note input {
   margin: 0;
   margin-bottom: 4px;
 }
-/* line 13, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/notes.css.scss */
+/* line 13, /root/fs-rails/app/assets/stylesheets/notes.css.scss */
 form#new_note #note_text, form.edit_note #note_text {
   display: block;
   width: 100%;
@@ -487,11 +487,11 @@ form#new_note #note_text, form.edit_note #note_text {
   margin-bottom: 4px;
   background-color: #dfe7fa;
 }
-/* line 20, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/notes.css.scss */
+/* line 20, /root/fs-rails/app/assets/stylesheets/notes.css.scss */
 form#new_note #note_source, form.edit_note #note_source {
   width: 80%;
 }
-/* line 23, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/notes.css.scss */
+/* line 23, /root/fs-rails/app/assets/stylesheets/notes.css.scss */
 form#new_note #note_public, form.edit_note #note_public {
   display: inline-block;
   width: 24px;
@@ -500,88 +500,226 @@ form#new_note #note_public, form.edit_note #note_public {
   vertical-align: middle;
 }
 
-/* line 32, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/notes.css.scss */
+/* line 32, /root/fs-rails/app/assets/stylesheets/notes.css.scss */
 .note-text-edit {
   display: none;
 }
 
-/* line 36, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/notes.css.scss */
+/* line 36, /root/fs-rails/app/assets/stylesheets/notes.css.scss */
 .note-text {
   display: inline-block;
   width: 80%;
 }
 
-/* line 41, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/notes.css.scss */
+/* line 41, /root/fs-rails/app/assets/stylesheets/notes.css.scss */
 .edit-note-link {
   display: inline-block;
   width: 10%;
   text-align: right;
 }
 
-/* line 47, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/notes.css.scss */
+/* line 47, /root/fs-rails/app/assets/stylesheets/notes.css.scss */
 .delete-note-link {
   display: inline-block;
   width: 10%;
   text-align: right;
 }
-/*/////////////// Fonts //////////////////*/
-/*@font-face {
-  font-family: Courgette;
-  src: font-url('Courgette/Courgette-Regular.ttf') format('truetype');
+/* line 3, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine {
+  display: table;
+  width: 100%;
 }
-
-@font-face {
-  font-family: JosefinSans;
-  src: font-url('Josefin_Sans/JosefinSans-Regular.ttf') format('truetype');
+/* line 6, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine div {
+  box-sizing: border-box;
+  display: table-cell;
+  /*border: 1px solid $black-color;*/
 }
-
-@font-face {
-  font-family: JosefinSans;
-  src: font-url('Josefin_Sans/JosefinSans-Bold.ttf') format('truetype');
+/* line 11, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine #groups {
+  width: 18%;
+  vertical-align: top;
+}
+/* line 15, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine #to-align-vertically {
+  width: 80%;
+}
+/* line 18, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine #elements {
+  display: inline-block;
+  min-height: 800px;
+  height: 810px;
+  overflow: auto;
+  width: 25%;
+  vertical-align: top;
+  background-color: #dfe7fa;
+  border: 2px solid #172b60;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+/* line 29, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine #elements .delete-element {
+  display: none;
+}
+/* line 33, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine #custom-text {
+  display: inline;
+}
+/* line 36, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine .custom-input {
+  padding: 4px;
+}
+/* line 39, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine #spacer {
+  display: inline-block;
+  width: 3%;
+}
+/* line 44, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine ul {
+  list-style-type: none;
+  margin: 0;
+}
+/* line 48, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine #group-list {
+  padding: 0;
+}
+/* line 51, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine #element-list {
+  padding: 4px;
+}
+/* line 55, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine li {
+  padding: 4px;
+  border-radius: 8px;
+  text-align: center;
+}
+/* line 60, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine .group-item {
+  margin-top: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
   font-weight: bold;
+  background-color: #dfe7fa;
+  cursor: pointer;
 }
-
-@font-face {
-  font-family: 'Icomoon';
-  src:font-url('icomoon.eot');
-  src:font-url('icomoon.eot?#iefix') format('embedded-opentype'),
-    font-url('icomoon.svg#icomoon') format('svg'),
-    font-url('icomoon.woff') format('woff'),
-    font-url('icomoon.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+/* line 68, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine .group-item:first-child {
+  margin-top: 0;
 }
-
-#log-out-icon:before {
-  content: '\e618';
-  font-family: 'Icomoon';
-  speak: none;
-  font-size: 32px;
-  color: #eee;
+/* line 71, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine .active-group, .routine .group-item:hover {
+  background-color: #172b60;
+  border: 1px solid #172b60;
+  border-right: none;
+  color: white;
 }
-
-#profile-icon:before {
-  content: '\e60c';
-  font-family: 'Icomoon';
-  speak: none;
-  font-size: 32px;
-  color: #eee;
+/* line 77, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine .element-item, .routine .routine-item {
+  margin: 4px;
+  background-color: white;
+  border: 1px solid #172b60;
+  display: none;
+  cursor: move;
 }
-*/
+/* line 84, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine .active-element {
+  display: block;
+}
+/* line 87, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine #custom-element {
+  display: block;
+  background-color: #53768c;
+  color: white;
+}
+/* line 93, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine #routine-space {
+  display: inline-block;
+  height: 100%;
+  width: 72%;
+  vertical-align: top;
+}
+/* line 98, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine #routine-space div {
+  display: block;
+}
+/* line 101, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine #routine-space .edit_routine div {
+  width: 15%;
+  display: inline-block;
+}
+/* line 104, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine #routine-space .edit_routine div input[type="submit"] {
+  width: 100%;
+}
+/* line 108, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine #routine-space textarea#routine_description {
+  margin-top: 4px;
+  width: 100%;
+}
+/* line 113, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine #routine-info {
+  display: block;
+  height: 10%;
+}
+/* line 118, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine form#new_routine input, .routine form.edit_routine input {
+  padding: 8px;
+  width: 58%;
+  box-sizing: border-box;
+}
+/* line 123, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine form#new_routine #routine_length, .routine form.edit_routine #routine_length {
+  width: 10%;
+}
+/* line 126, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine form#new_routine #routine_description, .routine form.edit_routine #routine_description {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+/* line 131, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine form#new_routine input[type="submit"], .routine form.edit_routine input[type="submit"] {
+  width: 15%;
+  display: inline-block;
+  font-size: 20px;
+  height: 34px;
+  padding-top: 0;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+/* line 141, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine #routine-box {
+  box-sizing: border-box;
+  margin-top: 2%;
+  border: 2px solid #172b60;
+  border-radius: 8px;
+  background-color: #172b60;
+  height: 88%;
+  position: relative;
+}
+/* line 149, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine #routine-box .delete-element {
+  cursor: pointer;
+}
+/* line 153, /root/fs-rails/app/assets/stylesheets/routines.css.scss */
+.routine .routine-item {
+  display: inline-block;
+  float: left;
+}
 /*//////////////////// General //////////////?*/
-/* line 49, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 5, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 * {
   color: #0a0607;
   font-family: JosefinSans;
 }
 
 /*/////////////////// Background /////////////*/
-/* line 56, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 12, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #background {
   width: 100%;
 }
 
-/* line 60, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 16, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #background img {
   min-width: 100%;
   z-index: -1;
@@ -590,7 +728,7 @@ form#new_note #note_public, form.edit_note #note_public {
 }
 
 /*////////////////////// Top Bar /////////////*/
-/* line 69, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 25, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #header {
   width: 100%;
   height: 48px;
@@ -601,23 +739,23 @@ form#new_note #note_public, form.edit_note #note_public {
   box-sizing: border-box;
 }
 
-/* line 79, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 35, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #header a:link {
   color: white;
 }
 
-/* line 83, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 39, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #header a:visited {
   color: white;
 }
 
-/* line 87, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 43, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #header div {
   display: inline-block;
   color: white;
 }
 
-/* line 92, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 48, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #left-header {
   overflow: auto;
   box-sizing: border-box;
@@ -626,7 +764,7 @@ form#new_note #note_public, form.edit_note #note_public {
   height: 100%;
 }
 
-/* line 100, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 56, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #title {
   font-family: 'Courgette';
   font-size: 30px;
@@ -635,12 +773,12 @@ form#new_note #note_public, form.edit_note #note_public {
   padding: 0;
 }
 
-/* line 108, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 64, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 .icon {
   margin: 6px;
 }
 
-/* line 112, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 68, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #right-header {
   overflow: auto;
   box-sizing: border-box;
@@ -649,7 +787,7 @@ form#new_note #note_public, form.edit_note #note_public {
   text-align: right;
 }
 
-/* line 120, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 76, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #right-header-list {
   list-style-type: none;
   margin: 0;
@@ -657,19 +795,19 @@ form#new_note #note_public, form.edit_note #note_public {
   height: 100%;
 }
 
-/* line 127, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 83, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #right-header-list li {
   display: inline;
   vertical-align: middle;
 }
 
-/* line 132, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 88, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #right-header-list li a {
   display: inline-block;
   vertical-align: middle;
 }
 
-/* line 137, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 93, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #user-picture img {
   height: 36px;
   width: auto;
@@ -702,7 +840,7 @@ form#new_note #note_public, form.edit_note #note_public {
   font-style: normal;
 }
 
-/* line 172, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 128, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #log-out-icon:before {
   content: '\e618';
   font-family: 'Icomoon';
@@ -711,7 +849,7 @@ form#new_note #note_public, form.edit_note #note_public {
   color: #eee;
 }
 
-/* line 180, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 136, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #profile-icon:before {
   content: '\e60c';
   font-family: 'Icomoon';
@@ -721,7 +859,7 @@ form#new_note #note_public, form.edit_note #note_public {
 }
 
 /* User-specific nav bar */
-/* line 190, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 146, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #nav-bar {
   list-style: none;
   margin: 0;
@@ -731,7 +869,7 @@ form#new_note #note_public, form.edit_note #note_public {
   font-size: 0px;
 }
 
-/* line 199, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 155, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #nav-bar:after {
   position: absolute;
   content: "";
@@ -741,12 +879,12 @@ form#new_note #note_public, form.edit_note #note_public {
   z-index: 1;
 }
 
-/* line 208, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 164, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #nav-bar:first-child {
   left: 10px;
 }
 
-/* line 212, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 168, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #nav-bar li {
   padding: 4px;
   border: 1px solid #172b60;
@@ -759,7 +897,7 @@ form#new_note #note_public, form.edit_note #note_public {
   border-top-right-radius: 6px;
 }
 
-/* line 224, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 180, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #nav-bar li.selected {
   font-weight: bold;
   background-color: white;
@@ -767,7 +905,7 @@ form#new_note #note_public, form.edit_note #note_public {
   z-index: 2;
 }
 
-/* line 231, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 187, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #nav-bar li img {
   height: 35px;
   border-radius: 100%;
@@ -775,7 +913,7 @@ form#new_note #note_public, form.edit_note #note_public {
 }
 
 /* Main Container */
-/* line 239, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 195, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 .container {
   width: 90%;
   margin-bottom: 40px;
@@ -785,7 +923,7 @@ form#new_note #note_public, form.edit_note #note_public {
   box-sizing: border-box;
 }
 
-/* line 248, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 204, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #content {
   box-sizing: border-box;
   margin: 0 auto;
@@ -801,29 +939,29 @@ form#new_note #note_public, form.edit_note #note_public {
 }
 
 /*////////////////// Links ///////////////*/
-/* line 264, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 220, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 a:link {
   color: #172b60;
   text-decoration: none;
 }
 
-/* line 269, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 225, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 a:visited {
   color: #172b60;
 }
 
-/* line 273, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 229, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 a:hover {
   color: grey;
 }
 
-/* line 277, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 233, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 li a:link {
   color: #172b60;
 }
 
 /*//////////////////// FORMS /////////////////////*/
-/* line 283, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 239, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 input {
   display: inline-block;
   font-size: 16px;
@@ -837,7 +975,7 @@ input {
   font-weight: bold;
 }
 
-/* line 296, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 252, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 textarea {
   display: inline-block;
   font-size: 16px;
@@ -850,34 +988,34 @@ textarea {
   resize: none;
 }
 
-/* line 308, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 264, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #session_email {
   border-bottom: none;
 }
 
-/* line 312, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 268, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 ::-webkit-input-placeholder {
   color: #53768c;
 }
 
-/* line 316, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 272, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 :-moz-placeholder {
   /* Firefox 18- */
   color: #53768c;
 }
 
-/* line 320, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 276, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 ::-moz-placeholder {
   /* Firefox 19+ */
   color: #53768c;
 }
 
-/* line 324, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 280, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 :-ms-input-placeholder {
   color: #53768c;
 }
 
-/* line 328, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 284, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 input[type="submit"] {
   color: #dfe7fa;
   border: 1px solid #172b60;
@@ -894,7 +1032,7 @@ input[type="submit"] {
 }
 
 /* Login page */
-/* line 344, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 300, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #login-page {
   box-sizing: border-box;
   margin: 0 auto;
@@ -907,22 +1045,22 @@ input[type="submit"] {
   font-family: 'Josefin Sans', sans-serif;
   z-index: 1;
 }
-/* line 355, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 311, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #login-page input {
   width: 100%;
 }
 
-/* line 360, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 316, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #login-page h1 {
   text-align: center;
 }
 
-/* line 364, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/static_pages.css.scss */
+/* line 320, /root/fs-rails/app/assets/stylesheets/static_pages.css.scss */
 #login-page p {
   text-align: center;
 }
 /*/////////////// Create new user ////////////////*/
-/* line 4, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 4, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 .user-info-page {
   box-sizing: border-box;
   margin: 0 auto;
@@ -935,24 +1073,24 @@ input[type="submit"] {
   font-family: 'Josefin Sans', sans-serif;
   z-index: 1;
 }
-/* line 15, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 15, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 .user-info-page h2 {
   margin: 4px;
 }
 
-/* line 21, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 21, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 #create-user-form input {
   width: 60%;
   background-color: white;
   margin-bottom: 4px;
   padding: 4px;
 }
-/* line 27, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 27, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 #create-user-form textarea {
   width: 100%;
   height: 8em;
 }
-/* line 31, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 31, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 #create-user-form label {
   display: inline-block;
   width: 40%;
@@ -960,7 +1098,7 @@ input[type="submit"] {
   padding-right: 8px;
   box-sizing: border-box;
 }
-/* line 38, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 38, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 #create-user-form input[type="submit"] {
   color: #dfe7fa;
   border: 1px solid #172b60;
@@ -976,7 +1114,7 @@ input[type="submit"] {
   box-sizing: border-box;
 }
 
-/* line 54, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 54, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 hr {
   background: #53768c;
   border: 0;
@@ -984,58 +1122,67 @@ hr {
 }
 
 /*//////////// Progress bars for users ////////*/
-/* line 62, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 62, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 #progress-list {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 68, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 68, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 .user-level-name {
   display: inline-block;
-  width: 25%;
+  width: 20%;
   padding-left: 8px;
   box-sizing: border-box;
 }
 
-/* line 75, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 75, /root/fs-rails/app/assets/stylesheets/users.css.scss */
+.user-level-checkbox {
+  width: 5%;
+  text-align: right;
+  display: inline-block;
+  box-sizing: border-box;
+  padding-right: 8px;
+}
+
+/* line 83, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 .user-level-progress {
   display: inline-block;
   width: 75%;
 }
 
-/* line 80, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 88, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 .user-level-bar {
   width: 100%;
 }
 
-/* line 84, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 92, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 li.level-info {
   padding-bottom: 0.25em;
   padding-top: 0.25em;
   border-bottom: 1px solid #dfe7fa;
 }
 
-/* line 90, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 98, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 li.level-info:first-child {
   border-top: 1px solid #dfe7fa;
 }
 
-/* line 94, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 102, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 progress::-webkit-progress-bar {
   background: #EEE;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2) inset;
   border-radius: 3px;
 }
 
-/* line 100, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 108, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 progress::-webkit-progress-value {
   background-color: #53768c;
   border-radius: 3px;
 }
 
-/* line 105, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 113, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 progress {
   background: #EEE;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2) inset;
@@ -1043,14 +1190,14 @@ progress {
   width: 100%;
 }
 
-/* line 112, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 120, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 progress::-moz-progress-bar {
   background-color: #CC0000;
   border-radius: 3px;
 }
 
 /*//////////////// Profile Page ////////////*/
-/* line 118, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 126, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 #profile-picture {
   box-sizing: border-box;
   display: inline-block;
@@ -1060,7 +1207,7 @@ progress::-moz-progress-bar {
   vertical-align: top;
 }
 
-/* line 127, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 135, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 #user-info-stats {
   box-sizing: border-box;
   display: inline-block;
@@ -1070,25 +1217,25 @@ progress::-moz-progress-bar {
   vertical-align: top;
 }
 
-/* line 136, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 144, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 #user-info-stats-list {
   list-style-type: none;
   padding: 0;
 }
 
 /*/////////// Coaching /////////////////*/
-/* line 144, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 152, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 .new_coaching input[type="submit"] {
   font-size: 16px;
   min-width: 240px;
 }
 
-/* line 150, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 158, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 .edit_coaching {
   display: inline-block;
   vertical-align: middle;
 }
-/* line 153, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 161, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 .edit_coaching input[type="submit"] {
   display: inline-block;
   font-size: 16px;
@@ -1097,36 +1244,36 @@ progress::-moz-progress-bar {
   margin: 0;
 }
 
-/* line 162, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users.css.scss */
+/* line 170, /root/fs-rails/app/assets/stylesheets/users.css.scss */
 .coach-skater-name {
   font-size: 20px;
   vertical-align: middle;
 }
-/* line 3, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users_skills.css.scss */
+/* line 3, /root/fs-rails/app/assets/stylesheets/users_skills.css.scss */
 .skill-notes-list {
   list-style-type: none;
   padding: 0;
 }
 
-/* line 8, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users_skills.css.scss */
+/* line 8, /root/fs-rails/app/assets/stylesheets/users_skills.css.scss */
 .skill-note {
   border-bottom: 1px solid #dfe7fa;
   padding: 4px 0px;
 }
 
-/* line 13, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users_skills.css.scss */
+/* line 13, /root/fs-rails/app/assets/stylesheets/users_skills.css.scss */
 .skill-note:first-child {
   border-top: 1px solid #dfe7fa;
 }
 
-/* line 17, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users_skills.css.scss */
+/* line 17, /root/fs-rails/app/assets/stylesheets/users_skills.css.scss */
 #level-skills-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-/* line 23, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users_skills.css.scss */
+/* line 23, /root/fs-rails/app/assets/stylesheets/users_skills.css.scss */
 #level-skills-list div {
   display: inline-block;
   overflow: auto;
@@ -1134,54 +1281,54 @@ progress::-moz-progress-bar {
   padding: 0;
 }
 
-/* line 30, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users_skills.css.scss */
+/* line 30, /root/fs-rails/app/assets/stylesheets/users_skills.css.scss */
 #level-skills-list div a {
   display: inline-block;
   margin: 0;
   padding-left: 0;
 }
 
-/* line 36, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users_skills.css.scss */
+/* line 36, /root/fs-rails/app/assets/stylesheets/users_skills.css.scss */
 li.users-skill-progress {
   vertical-align: middle;
   margin: 8px 0;
 }
 
-/* line 41, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users_skills.css.scss */
+/* line 41, /root/fs-rails/app/assets/stylesheets/users_skills.css.scss */
 .skill-label {
   margin: auto;
   width: 25%;
 }
 
-/* line 46, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users_skills.css.scss */
+/* line 46, /root/fs-rails/app/assets/stylesheets/users_skills.css.scss */
 .skill-rating {
   width: 75%;
 }
 
-/* line 50, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users_skills.css.scss */
+/* line 50, /root/fs-rails/app/assets/stylesheets/users_skills.css.scss */
 input.skill-slider {
   width: 100%;
   margin: 0;
 }
-/* line 3, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users_test_levels.css.scss */
+/* line 3, /root/fs-rails/app/assets/stylesheets/users_test_levels.css.scss */
 #field-move-description {
   display: inline-block;
   padding-right: 8px;
   box-sizing: border-box;
 }
 
-/* line 9, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users_test_levels.css.scss */
+/* line 9, /root/fs-rails/app/assets/stylesheets/users_test_levels.css.scss */
 #field-move-diagram {
   width: 35%;
   float: right;
   display: inline-block;
 }
-/* line 13, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users_test_levels.css.scss */
+/* line 13, /root/fs-rails/app/assets/stylesheets/users_test_levels.css.scss */
 #field-move-diagram img {
   width: 100%;
 }
 
-/* line 18, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users_test_levels.css.scss */
+/* line 18, /root/fs-rails/app/assets/stylesheets/users_test_levels.css.scss */
 #content:after {
   content: " ";
   height: 0;
@@ -1189,24 +1336,24 @@ input.skill-slider {
   clear: both;
 }
 
-/* line 25, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users_test_levels.css.scss */
+/* line 25, /root/fs-rails/app/assets/stylesheets/users_test_levels.css.scss */
 #field-move-content {
   width: 65%;
 }
 
-/* line 29, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users_test_levels.css.scss */
+/* line 29, /root/fs-rails/app/assets/stylesheets/users_test_levels.css.scss */
 .field-move-notes-list {
   list-style-type: none;
   padding: 0;
 }
 
-/* line 34, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users_test_levels.css.scss */
+/* line 34, /root/fs-rails/app/assets/stylesheets/users_test_levels.css.scss */
 .field-move-note {
   border-bottom: 1px solid #dfe7fa;
   padding: 4px 0px;
 }
 
-/* line 39, /home/helin/Documents/ongoing_projects/fs-rails/app/assets/stylesheets/users_test_levels.css.scss */
+/* line 39, /root/fs-rails/app/assets/stylesheets/users_test_levels.css.scss */
 .field-move-note:first-child {
   border-top: 1px solid #dfe7fa;
 }
