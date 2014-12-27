@@ -74,9 +74,9 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Do not dump schema after migrations.
-  config.assets.paths << Rails.root.join("app", "assets", "fonts")
+  # config.assets.paths << Rails.root.join("app", "assets", "fonts")
   config.active_record.dump_schema_after_migration = false
-  config.assets.precompile = ['*.css.erb']
+  config.assets.precompile += ['*.css.erb', '*.js']  
 
   RAILS_DEFAULT_LOGGER = Logger.new('log/production.log')
 end
